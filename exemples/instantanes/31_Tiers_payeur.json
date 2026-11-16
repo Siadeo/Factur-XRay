@@ -1,0 +1,89 @@
+{
+ "charges": [],
+ "entete": {
+  "BT_1": "F202600310",
+  "BT_106": 1560.0,
+  "BT_109": 1560.0,
+  "BT_110": 312.0,
+  "BT_112": 1872.0,
+  "BT_113": 0.0,
+  "BT_115": 1872.0,
+  "BT_2": "2026-03-16",
+  "BT_20": "Paiement à 30 jours date de facture",
+  "BT_23": "S1",
+  "BT_24": "urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended",
+  "BT_27": "CONSEIL ORION SARL",
+  "BT_3": "380",
+  "BT_30": "310000013",
+  "BT_31": "FR38310000013",
+  "BT_33": "SARL au capital de 20 000 EUR",
+  "BT_34": "310000013",
+  "BT_35": "5 cours de l'Intendance",
+  "BT_37": "BORDEAUX",
+  "BT_38": "33000",
+  "BT_40": "FR",
+  "BT_41": "Paul Durand",
+  "BT_43": "facturation@conseil-orion.example",
+  "BT_44": "MAISON LUMEN SARL",
+  "BT_47": "200000008",
+  "BT_48": "FR37200000008",
+  "BT_49": "200000008",
+  "BT_5": "EUR",
+  "BT_50": "8 avenue du Port",
+  "BT_52": "MARSEILLE",
+  "BT_53": "13002",
+  "BT_55": "FR",
+  "BT_56_0": "Service comptabilité fournisseurs",
+  "BT_58": "fournisseurs@maison-lumen.example",
+  "BT_72": "2026-03-12",
+  "BT_81": "30",
+  "BT_82": "Virement",
+  "BT_84": "FR7699999000010001234567809",
+  "BT_86": "XBQAFRP0XXX",
+  "BT_9": "2026-04-15",
+  "EXT_FR_FE_BG_02": "MUTUELLE HORIZON"
+ },
+ "lignes": [
+  {
+   "BT_126": "1",
+   "BT_129": 2.0,
+   "BT_130": "DAY",
+   "BT_131": 1560.0,
+   "BT_146": 780.0,
+   "BT_151": "S",
+   "BT_152": 20.0,
+   "BT_153": "Bilan de prévention des risques professionnels"
+  }
+ ],
+ "notes": [
+  {
+   "BT_21": "PMD",
+   "BT_22": "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."
+  },
+  {
+   "BT_21": "PMT",
+   "BT_22": "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."
+  },
+  {
+   "BT_21": "AAB",
+   "BT_22": "Pas d'escompte pour paiement anticipé."
+  },
+  {
+   "BT_21": "BAR",
+   "BT_22": "B2B"
+  },
+  {
+   "BT_21": "AAI",
+   "BT_22": "Facture réglée directement par MUTUELLE HORIZON, tiers payeur désigné au contrat."
+  }
+ ],
+ "remises": [],
+ "tva": [
+  {
+   "BT_116": 1560.0,
+   "BT_117": 312.0,
+   "BT_118": "S",
+   "BT_119": 20.0
+  }
+ ]
+}

@@ -1,0 +1,857 @@
+# Généré par tools/exemples/extract_catalog.py : ne pas éditer à la main.
+01_Biens:
+  classeur: A_Factures_de_base
+  titre: 01 – Facture de vente de biens
+  famille: A. Factures de base
+  descriptif: 'Cas nominal : livraison de biens entre deux assujettis français. Sert de référence pour les mentions obligatoires
+    communes (PMT, PMD, AAB, SIREN, adresses électroniques).'
+  type_document: '380'
+  cadre: B1
+  codes: 380 · B1
+  cas_usage: Nominal (Annexe B, UC1)
+  profil: EN16931
+  attention: '• Notes PMT, PMD et AAB obligatoires, une seule fois chacune (BR-FR-05, BR-FR-06).
+
+    • SIREN du vendeur (BT-30) obligatoire, 9 chiffres (BR-FR-10) ; SIREN de l''acheteur (BT-47) obligatoire si BAR = B2B
+    (BR-FR-11).
+
+    • Adresse électronique de l''acheteur (BT-49) = SIREN…, schemeID 0225 (BR-FR-21) ; BT-34 obligatoire (BR-FR-13).
+
+    • Note BAR (BT-21) avec valeur B2B (BR-FR-20).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-118: Taux normal
+02_Services_encaissement:
+  classeur: A_Factures_de_base
+  titre: 02 – Facture de prestation de services, TVA à l'encaissement
+  famille: A. Factures de base
+  descriptif: 'Prestation sans option pour les débits : BT-8 absent, la TVA est exigible à l''encaissement.'
+  type_document: '380'
+  cadre: S1
+  codes: 380 · S1
+  cas_usage: Nominal (UC1)
+  profil: EN16931
+  attention: '• BT-8 non renseigné : TVA exigible à l''encaissement (défaut pour les services).
+
+    • Le paiement sera suivi par le statut « Encaissée » (hors Flux 2).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-8: Ne pas renseigner (TVA à l'encaissement)
+03_Services_debits:
+  classeur: A_Factures_de_base
+  titre: 03 – Facture de prestation de services, option TVA sur les débits
+  famille: A. Factures de base
+  descriptif: 'Même prestation avec option pour les débits : BT-8 = 5 en CII.'
+  type_document: '380'
+  cadre: S1
+  codes: 380 · S1
+  cas_usage: Nominal
+  profil: EN16931
+  attention: '• BT-8 = 5 en CII (3 en UBL). En CII, la donnée est dans la ventilation de TVA (BG-23) : la renseigner dans
+    une occurrence ou dans chacune (Annexe B XP Z12-012).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-8: Option TVA sur les débits (CII = 5)
+04_Mixte:
+  classeur: A_Factures_de_base
+  titre: 04 – Facture mixte biens et services
+  famille: A. Factures de base
+  descriptif: Biens et services non accessoires l'un de l'autre sur la même facture. Il faut distinguer biens et services
+    ligne par ligne (cas 31).
+  type_document: '380'
+  cadre: M1
+  codes: 380 · M1
+  cas_usage: Cas 31
+  profil: EN16931
+  attention: '• Cadre M1 = facture « double » (BR-FR-08).
+
+    • Distinguer les lignes de biens et de services (description, éventuellement note de ligne).
+
+    • BT-8 éventuel pour la part services avec option débits.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+05_Deja_payee:
+  classeur: A_Factures_de_base
+  titre: 05 – Facture déjà payée à l'émission
+  famille: A. Factures de base
+  descriptif: Facture réglée avant son émission (comptant, carte…). BT-113 = BT-112, BT-115 = 0, BT-9 = date de paiement (cas
+    2).
+  type_document: '380'
+  cadre: B2
+  codes: 380 · B2/S2/M2
+  cas_usage: Cas 2
+  profil: EN16931
+  attention: '• BT-113 = BT-112 et BT-115 = 0 (BR-FR-CO-09).
+
+    • BT-9 obligatoire = date de paiement, peut précéder BT-2 (BR-FR-CO-07).
+
+    • Variantes S2 (services) et M2 (mixte).'
+  commentaires:
+    BT-23: 'Variantes : S2, M2'
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-9: Date du paiement effectif
+    BT-113: Égal au total TTC
+06_Multi_cmd_livraisons:
+  classeur: A_Factures_de_base
+  titre: 06 – Facture multi-commandes, multi-livraisons
+  famille: A. Factures de base
+  descriptif: Une facture qui regroupe plusieurs commandes et livraisons, référencées à la ligne. Adresses et dates de livraison
+    portées à la ligne (cas 1).
+  type_document: '380'
+  cadre: B1
+  codes: 380 · B1
+  cas_usage: Cas 1
+  profil: EXTENDED
+  attention: '• Références de commande et de livraison à la ligne (profil EXTENDED).
+
+    • Adresse de livraison à la ligne (EXT-FR-FE-BG-10) et date de livraison à la ligne (EXT-FR-FE-BG-11).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-149: Une adresse de livraison par ligne
+    EXT-FR-FE-158: Date de livraison réelle par ligne
+    Réf. commande ligne: EXTENDED – à confirmer XP Z12-012
+    Réf. livraison ligne: EXTENDED – à confirmer XP Z12-012
+07_Periodique_abonnement:
+  classeur: A_Factures_de_base
+  titre: 07 – Facture périodique ou d'abonnement
+  famille: A. Factures de base
+  descriptif: Facture récapitulative ou mensuelle avec période de facturation BG-14 / BG-26 (cas 32).
+  type_document: '380'
+  cadre: S1
+  codes: 380 · S1
+  cas_usage: Cas 32
+  profil: EN16931
+  attention: • Période de facturation BG-14 (en-tête) ou BG-26 (ligne) à la place d'une date de livraison (art. 289 I-3 et
+    242 nonies A du CGI).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-73: Début de période
+    BT-74: Fin de période
+08_Acompte:
+  classeur: B_Acomptes
+  titre: 08 – Facture d'acompte
+  famille: B. Acomptes
+  descriptif: Demande d'acompte avant livraison ou prestation. La TVA est exigible à l'encaissement de l'acompte (cas 20).
+  type_document: '386'
+  cadre: S1
+  codes: 386 · B1/S1
+  cas_usage: Cas 20
+  profil: EN16931
+  attention: '• BT-23 = cadre de l''opération à venir : B1, S1 ou M1 (fiche flash FNFE « Acomptes »).
+
+    • TVA exigible à l''encaissement de l''acompte, même sur biens.
+
+    • BT-9 peut précéder BT-2 (BR-FR-CO-07).'
+  commentaires:
+    BT-23: B1 si l'opération à venir est une livraison de biens
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+09_Acompte_deja_paye:
+  classeur: B_Acomptes
+  titre: 09 – Facture d'acompte déjà encaissé
+  famille: B. Acomptes
+  descriptif: 'Facture d''acompte émise après réception du paiement : BT-9 peut précéder BT-2.'
+  type_document: '386'
+  cadre: S2
+  codes: 386 · S2
+  cas_usage: Cas 20
+  profil: EN16931
+  attention: '• BT-113 = BT-112, BT-115 = 0, BT-9 = date du paiement (BR-FR-CO-09).
+
+    • Variantes B2, M2.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-9: Date du paiement effectif
+    BT-113: Égal au total TTC
+10_Definitive_apres_acompte:
+  classeur: B_Acomptes
+  titre: 10 – Facture définitive après acompte
+  famille: B. Acomptes
+  descriptif: Facture finale qui reprend l'acompte en référence (BT-25, type 386) et le déduit en montant déjà payé (BT-113)
+    (cas 21).
+  type_document: '380'
+  cadre: S4
+  codes: 380 · B4/S4/M4
+  cas_usage: Cas 21
+  profil: EN16931
+  attention: '• Cadres 4 incompatibles avec les types 386, 500, 503 (BR-FR-CO-08).
+
+    • Option 1 : acompte référencé en en-tête (BT-25 + EXT-FR-FE-02 = 386), montant TTC en BT-113.
+
+    • Option 2 : reprise de l''acompte en ligne avec référence en ligne (EXT-FR-FE-BG-06).'
+  commentaires:
+    BT-23: B4 (biens), M4 (mixte)
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-25: Numéro de la facture d'acompte
+    BT-26: Date de la facture d'acompte
+    EXT-FR-FE-02: Type de la facture antérieure
+    BT-113: Montant TTC de l'acompte déjà versé
+11_Avoir_acompte:
+  classeur: B_Acomptes
+  titre: 11 – Avoir sur facture d'acompte
+  famille: B. Acomptes
+  descriptif: Annulation totale ou partielle d'une facture d'acompte. Incompatible avec les cadres 4.
+  type_document: '503'
+  cadre: S1
+  codes: 503 · B1/S1
+  cas_usage: Cas 20
+  profil: EN16931
+  attention: '• Référence à la facture d''acompte obligatoire (BR-FR-CO-05).
+
+    • Interdit avec B4, S4, M4 (BR-FR-CO-08).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-25: Facture d'acompte annulée
+12_Rectificative:
+  classeur: C_Corrections
+  titre: 12 – Facture rectificative
+  famille: 'C. Corrections : rectificatives, avoirs, notes de débit'
+  descriptif: Facture qui annule et remplace une facture erronée. Elle référence une seule facture antérieure, avec BT-25
+    et BT-26.
+  type_document: '384'
+  cadre: B1
+  codes: '384'
+  cas_usage: UC4 (Annexe B)
+  profil: EN16931
+  attention: '• Une et une seule référence BT-25 + BT-26 (BR-FR-CO-04).
+
+    • La facture initiale sera close par le statut « Annulée » (hors Flux 2).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-25: Facture remplacée (une seule)
+13_Avoir_total:
+  classeur: C_Corrections
+  titre: 13 – Avoir d'annulation totale
+  famille: 'C. Corrections : rectificatives, avoirs, notes de débit'
+  descriptif: Annulation complète d'une facture, suivie le cas échéant d'une refacturation. Référence à la facture antérieure
+    obligatoire.
+  type_document: '381'
+  cadre: B1
+  codes: '381'
+  cas_usage: UC5b (Annexe B)
+  profil: EN16931
+  attention: '• Au moins une référence BT-25 + BT-26 en en-tête, OU sur chaque ligne DETAIL (EXT-FR-FE-136 et 138) (BR-FR-CO-05).
+
+    • Montants positifs : c''est le type 381 qui porte le sens « avoir ».
+
+    • En UBL, utiliser le message CreditNote (sans objet en Factur-X).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-25: Facture annulée
+14_Avoir_partiel:
+  classeur: C_Corrections
+  titre: 14 – Avoir partiel (rabais, retour)
+  famille: 'C. Corrections : rectificatives, avoirs, notes de débit'
+  descriptif: 'Réduction partielle : retour de marchandise, rabais ou geste commercial. Référence en en-tête ou à la ligne.'
+  type_document: '381'
+  cadre: B1
+  codes: '381'
+  cas_usage: —
+  profil: EN16931
+  attention: • Possibilité de référencer plusieurs factures antérieures à la ligne (EXT-FR-FE-136 et 138) (BR-FR-CO-05).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-136: 'Option : facture antérieure par ligne'
+15_Avoir_remise_globale:
+  classeur: C_Corrections
+  titre: 15 – Avoir de remise globale (RFA)
+  famille: 'C. Corrections : rectificatives, avoirs, notes de débit'
+  descriptif: Ristourne de fin de période sur un ensemble de factures. Contrat BT-12 et période BG-14 obligatoires.
+  type_document: '262'
+  cadre: B1
+  codes: '262'
+  cas_usage: —
+  profil: EN16931
+  attention: • BT-12 et BG-14 (BT-73, BT-74) obligatoires (BR-FR-CO-03).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-12: Obligatoire
+    BT-73: Début de la période de remise
+    BT-74: Fin de la période de remise
+16_Avoir_net_de_taxe:
+  classeur: C_Corrections
+  titre: 16 – Avoir net de taxe
+  famille: 'C. Corrections : rectificatives, avoirs, notes de débit'
+  descriptif: Avoir sans incidence sur la TVA, avec le motif d'exonération VATEX-FR-CNWVAT.
+  type_document: '381'
+  cadre: B1
+  codes: '381'
+  cas_usage: —
+  profil: EN16931
+  attention: '• VATEX-FR-CNWVAT réservé aux avoirs : 261, 381, 396.
+
+    • Motif en clair (BT-120) et code (BT-121).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-120: Libellé du motif
+    BT-121: Avoir net de taxe
+17_Note_de_debit:
+  classeur: C_Corrections
+  titre: 17 – Note de débit
+  famille: 'C. Corrections : rectificatives, avoirs, notes de débit'
+  descriptif: Refacturation de frais, de pénalités ou complément de prix, traitée comme une facture (cas 18).
+  type_document: '380'
+  cadre: S1
+  codes: '380'
+  cas_usage: Cas 18
+  profil: EN16931
+  attention: '• Pas de code « note de débit » autorisé (BR-FR-04) : utiliser 380.
+
+    • Référence facultative à la facture d''origine (BT-25).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+18_Affacturee:
+  classeur: D_Affacturage
+  titre: 18 – Facture affacturée
+  famille: D. Affacturage
+  descriptif: 'Créance cédée à un affactureur : bénéficiaire du paiement (BG-10) = affactureur, mention de subrogation, coordonnées
+    bancaires de l''affactureur.'
+  type_document: '393'
+  cadre: B1
+  codes: '393'
+  cas_usage: Cas 10 (affactureur connu)
+  profil: EN16931
+  attention: '• Bénéficiaire BG-10 = affactureur (nom BT-59, identifiant BT-60/61).
+
+    • IBAN de l''affactureur en BT-84.
+
+    • Mention de subrogation en note (usage).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-59: Affactureur
+    BT-61: SIREN de l'affactureur
+    BT-84: IBAN de l'affactureur
+19_Avoir_affacture:
+  classeur: D_Affacturage
+  titre: 19 – Avoir affacturé
+  famille: D. Affacturage
+  descriptif: Avoir portant sur une facture affacturée.
+  type_document: '396'
+  cadre: B1
+  codes: '396'
+  cas_usage: Cas 10
+  profil: EN16931
+  attention: • Référence à la facture affacturée obligatoire (BR-FR-CO-05).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-59: Affactureur
+20_Rectificative_affacturee:
+  classeur: D_Affacturage
+  titre: 20 – Facture rectificative affacturée
+  famille: D. Affacturage
+  descriptif: Rectification d'une facture affacturée.
+  type_document: '472'
+  cadre: B1
+  codes: '472'
+  cas_usage: Cas 10
+  profil: EN16931
+  attention: • Une seule référence antérieure (BR-FR-CO-04).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-59: Affactureur
+21_Affactureur_inconnu:
+  classeur: D_Affacturage
+  titre: 21 – Affacturage décidé après émission
+  famille: D. Affacturage
+  descriptif: Facture émise en 380, puis cédée à un affactureur inconnu au moment de la création (cas 10).
+  type_document: '380'
+  cadre: B1
+  codes: '380'
+  cas_usage: Cas 10
+  profil: EN16931
+  attention: • La facture reste en 380 ; la cession intervient après émission (modalités à détailler selon l'Annexe A de la
+    XP Z12-014).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+22_Mandat_pour_compte:
+  classeur: E_Mandat_Autofacturation
+  titre: 22 – Facture émise sous mandat (pour ordre et pour compte)
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: Un tiers mandataire émet la facture au nom et pour le compte du vendeur, avec une numérotation propre au mandataire
+    (cas 19a).
+  type_document: '380'
+  cadre: B1
+  codes: '380'
+  cas_usage: Cas 19a
+  profil: EXTENDED
+  attention: '• Numéro de facture avec racine propre au mandataire (BOI-TVA-DECLA-30-20-20-10).
+
+    • Le vendeur (BG-4) reste le mandant ; le mandataire est identifié comme facturant (Invoicer) ou agent du vendeur (à confirmer
+    XP Z12-014 cas 19a).
+
+    • Tenir compte du régime TVA du vendeur.'
+  commentaires:
+    BT-1: Racine propre au mandataire
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-BG-03: 'Alternative : mandataire en agent du vendeur'
+    Facturant: Tiers mandataire
+23_Autofacture:
+  classeur: E_Mandat_Autofacturation
+  titre: 23 – Autofacture
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: 'L''acheteur émet la facture à la place du vendeur, avec mention « Autofacturation ». Contrôle d''adresse inversé
+    : le BT-34 du vendeur doit commencer par son SIREN (cas 19b).'
+  type_document: '389'
+  cadre: B1
+  codes: '389'
+  cas_usage: Cas 19b (UC13)
+  profil: EN16931
+  attention: '• BT-34 (adresse électronique du vendeur) = SIREN…, schemeID 0225 (BR-FR-22).
+
+    • Mention « Autofacturation » en note.
+
+    • Mandat d''autofacturation préalable.'
+  commentaires:
+    BT-22: Inclure la mention « Autofacturation »
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-34: Doit commencer par le SIREN du vendeur, schemeID 0225
+24_Autofacture_acompte:
+  classeur: E_Mandat_Autofacturation
+  titre: 24 – Autofacture d'acompte
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: Acompte autofacturé par l'acheteur.
+  type_document: '500'
+  cadre: S1
+  codes: '500'
+  cas_usage: Cas 19b + 20
+  profil: EN16931
+  attention: • Mêmes règles que les exemples 23 et 08 (BR-FR-22, BR-FR-CO-07).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-34: SIREN du vendeur, schemeID 0225
+25_Avoir_autofacture:
+  classeur: E_Mandat_Autofacturation
+  titre: 25 – Avoir autofacturé
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: Avoir émis par l'acheteur sous mandat d'autofacturation.
+  type_document: '261'
+  cadre: B1
+  codes: '261'
+  cas_usage: Cas 19b, 18
+  profil: EN16931
+  attention: • Référence à la facture antérieure obligatoire (BR-FR-CO-05).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+26_Autofacture_rectif:
+  classeur: E_Mandat_Autofacturation
+  titre: 26 – Autofacture rectificative
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: Rectification d'une autofacture.
+  type_document: '471'
+  cadre: B1
+  codes: '471'
+  cas_usage: Cas 19b
+  profil: EN16931
+  attention: • Une seule référence antérieure (BR-FR-CO-04).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+27_Autofacture_affacturee:
+  classeur: E_Mandat_Autofacturation
+  titre: 27 – Autofacture affacturée
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: 'Autofacture dont la créance est cédée à un affactureur. Variantes possibles : 473 (rectificative) et 502 (avoir).'
+  type_document: '501'
+  cadre: B1
+  codes: '501'
+  cas_usage: Cas 19b + 10
+  profil: EN16931
+  attention: • Cumul des règles autofacture (BR-FR-22) et affacturage (BG-10).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-59: Affactureur
+28_Autofacture_particulier:
+  classeur: E_Mandat_Autofacturation
+  titre: 28 – Autofacturation avec un particulier
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: Un professionnel achète à un particulier et établit le document (cas 23). Périmètre Flux 2 à confirmer dans
+    l'Annexe A de la XP Z12-014.
+  type_document: '389'
+  cadre: B1
+  codes: '389'
+  cas_usage: Cas 23
+  profil: EN16931
+  attention: '• Vendeur non assujetti, sans SIREN : identification et traitement à confirmer (cas 23).
+
+    • Opération a priori hors e-invoicing B2B domestique.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+29_Autofacture_bidirect:
+  classeur: E_Mandat_Autofacturation
+  titre: 29 – Autofacture bidirectionnelle
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: Flux croisés entre deux partenaires dans une seule autofacture, avec exactement deux lignes GROUP (cas 45).
+  type_document: '389'
+  cadre: S9
+  codes: 389 · B9/S9/M9
+  cas_usage: Cas 45 (UC13 bidirectionnelle)
+  profil: EXTENDED
+  attention: '• BT-3 obligatoirement auto-facturé : 389, 261, 500, 501, 502, 471, 473 (BR-FR-BD-13).
+
+    • Exactement deux lignes GROUP sans parent (BR-FR-BD-02).
+
+    • Chaque ligne GROUP porte un numéro AFL (BT-128) et l''identité de son vendeur (EXT-FR-FE-164, 167, 177).
+
+    • Exemple AFNOR : UC13_AUTOF202600035_BIDIRECTIONNELLE.'
+  commentaires:
+    BT-23: B9, M9 selon la nature
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-162: Lignes enfants
+    EXT-FR-FE-163: Puis DETAIL pour les lignes enfants
+    BT-128-1: Numéro de facture par GROUP
+30_Netting_facture_croisee:
+  classeur: E_Mandat_Autofacturation
+  titre: 30 – Autofacture compensée avec une facture croisée
+  famille: E. Mandat de facturation et autofacturation
+  descriptif: Compensation (netting) entre une autofacture et une facture en sens inverse (cas 40, exemple AFNOR UC13).
+  type_document: '389'
+  cadre: B1
+  codes: 389 + 380
+  cas_usage: Cas 40 (UC13)
+  profil: EN16931 / EXTENDED
+  attention: '• Deux documents distincts : l''autofacture (389) et la facture croisée (380).
+
+    • Exemple AFNOR : UC13_AUTOF202600028 + UC13_F202600037.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+31_Tiers_payeur:
+  classeur: F_Tiers_Intermediaires
+  titre: 31 – Facture payée par un tiers payeur
+  famille: F. Tiers payeurs et intermédiaires
+  descriptif: 'Le payeur est distinct de l''acheteur et connu à la facturation : bloc payeur EXT-FR-FE-BG-02 (cas 3).'
+  type_document: '380'
+  cadre: S1
+  codes: '380'
+  cas_usage: Cas 3
+  profil: EXTENDED
+  attention: • Bloc payeur EXT-FR-FE-BG-02 (PayerTradeParty, profil EXTENDED).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-BG-02: Tiers payeur
+32_Prise_en_charge_partielle:
+  classeur: F_Tiers_Intermediaires
+  titre: 32 – Facture prise en charge partiellement par un tiers
+  famille: F. Tiers payeurs et intermédiaires
+  descriptif: Une partie est payée par un tiers (assurance, mutuelle…), le reste par l'acheteur (cas 4).
+  type_document: '380'
+  cadre: S1
+  codes: '380'
+  cas_usage: Cas 4
+  profil: EXTENDED
+  attention: • Répartition des montants entre payeurs à documenter (cas 4, Annexe A).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-BG-02: Tiers prenant en charge une partie
+33_Paiement_a_un_tiers:
+  classeur: F_Tiers_Intermediaires
+  titre: 33 – Facture à payer à un tiers bénéficiaire
+  famille: F. Tiers payeurs et intermédiaires
+  descriptif: Le paiement est dû à un tiers désigné (BG-10) qui n'est pas affactureur (cas 8).
+  type_document: '380'
+  cadre: B1
+  codes: '380'
+  cas_usage: Cas 8
+  profil: EN16931
+  attention: • BG-10 = tiers bénéficiaire ; IBAN du tiers en BT-84.
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-59: Tiers bénéficiaire
+    BT-61: SIREN du bénéficiaire
+    BT-84: IBAN du bénéficiaire
+34_Tiers_recepteur_acheteur:
+  classeur: F_Tiers_Intermediaires
+  titre: 34 – Facture reçue par un tiers pour le compte de l'acheteur
+  famille: F. Tiers payeurs et intermédiaires
+  descriptif: 'Un tiers mandaté ou un intermédiaire transparent reçoit et traite la facture : agent de l''acheteur (cas 11
+    et 12).'
+  type_document: '380'
+  cadre: B1
+  codes: '380'
+  cas_usage: Cas 11, 12
+  profil: EXTENDED
+  attention: • L'acheteur (BG-7) reste le preneur ; le tiers est identifié comme agent de l'acheteur (EXTENDED).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    Agent acheteur: Tiers gestionnaire de la facture
+35_Debours:
+  classeur: F_Tiers_Intermediaires
+  titre: 35 – Facture avec débours
+  famille: F. Tiers payeurs et intermédiaires
+  descriptif: 'Refacturation à l''identique de frais avancés pour le compte du client : lignes en catégorie O, hors champ
+    (cas 16).'
+  type_document: '380'
+  cadre: S1
+  codes: '380'
+  cas_usage: Cas 16
+  profil: EN16931
+  attention: '• Lignes de débours : BT-151 = O, avec une ventilation BG-23 dédiée (BT-118 = O).
+
+    • Recommandation AFNOR : ne pas mélanger débours et articles avec TVA.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-118: Ventilation des débours (une BG-23 par catégorie)
+    BT-151: Lignes de débours
+36_Marketplace_mandat:
+  classeur: F_Tiers_Intermediaires
+  titre: 36 – Facture marketplace sous mandat
+  famille: F. Tiers payeurs et intermédiaires
+  descriptif: La place de marché encaisse et facture au nom du vendeur (cas 17b). La variante 17a, où elle est seulement intermédiaire
+    de paiement, peut faire l'objet d'un exemple distinct.
+  type_document: '380'
+  cadre: B1
+  codes: '380'
+  cas_usage: Cas 17b
+  profil: EXTENDED
+  attention: '• Place de marché = facturant sous mandat + bénéficiaire du paiement.
+
+    • Numérotation propre au mandataire.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    Facturant: Place de marché (mandataire)
+    BT-59: Place de marché (encaissement)
+37_Sous_traitant_autoliq:
+  classeur: G_BTP_Sous_cotraitance
+  titre: 37 – Facture de sous-traitant en autoliquidation
+  famille: G. BTP, sous-traitance, cotraitance
+  descriptif: 'Sous-traitance de travaux : facture hors taxe, catégorie AE, mention « Autoliquidation » (cas 13).'
+  type_document: '380'
+  cadre: S1
+  codes: 380 · S1
+  cas_usage: Cas 13
+  profil: EN16931
+  attention: '• BT-118 = AE, TVA à 0, motif d''exonération renseigné.
+
+    • Cadre S1, ou S5 en cas de paiement direct.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-11: Chantier
+    BT-118: Autoliquidation
+38_Sous_traitant_pay_direct:
+  classeur: G_BTP_Sous_cotraitance
+  titre: 38 – Facture de sous-traitant avec paiement direct
+  famille: G. BTP, sous-traitance, cotraitance
+  descriptif: 'Le maître d''ouvrage paie directement le sous-traitant : payeur = maître d''ouvrage. Demande de paiement direct
+    via le statut 224.'
+  type_document: '380'
+  cadre: S5
+  codes: 380 · S5
+  cas_usage: Cas 13
+  profil: EXTENDED
+  attention: '• Cadre S5 : facture de sous-traitant (BR-FR-08).
+
+    • Payeur = maître d''ouvrage (EXT-FR-FE-BG-02).
+
+    • Statut CDV 224 « Demande de paiement direct » (hors Flux 2).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-BG-02: Maître d'ouvrage
+    BT-11: Chantier
+39_Titulaire_apres_pay_direct:
+  classeur: G_BTP_Sous_cotraitance
+  titre: 39 – Facture du titulaire après paiement direct
+  famille: G. BTP, sous-traitance, cotraitance
+  descriptif: Facture globale de l'entreprise principale ; la part payée directement au sous-traitant figure en BT-113.
+  type_document: '380'
+  cadre: S1
+  codes: 380 · S1
+  cas_usage: Cas 13
+  profil: EN16931
+  attention: • BT-112 = prestation du titulaire + du sous-traitant ; BT-113 = part payée au sous-traitant ; BT-115 = solde.
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-11: Chantier
+    BT-113: Part payée directement au sous-traitant
+    BT-115: Solde dû au titulaire
+40_Cotraitant:
+  classeur: G_BTP_Sous_cotraitance
+  titre: 40 – Facture de cotraitant
+  famille: G. BTP, sous-traitance, cotraitance
+  descriptif: Un cotraitant facture sa part ; le mandataire du groupement est indiqué comme agent du vendeur (cas 14).
+  type_document: '380'
+  cadre: S6
+  codes: 380 · S6
+  cas_usage: Cas 14
+  profil: EXTENDED
+  attention: '• Cadre S6 (BR-FR-08).
+
+    • Mandataire du groupement en agent du vendeur (EXT-FR-FE-BG-03).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-BG-03: Mandataire du groupement
+    BT-11: Marché
+41_Demande_paiement_B2G:
+  classeur: G_BTP_Sous_cotraitance
+  titre: 41 – Demande de paiement de sous-traitance (B2G)
+  famille: G. BTP, sous-traitance, cotraitance
+  descriptif: 'Marché public avec paiement direct : le sous-traitant adresse une demande de paiement (et non une facture)
+    à l''acheteur public, via le titulaire.'
+  type_document: '380'
+  cadre: S3
+  codes: 380 · S3
+  cas_usage: Dossier Chorus Pro §6.13
+  profil: EXTENDED
+  attention: '• Document non fiscal : pas de contrôle de doublon de facture.
+
+    • Attestation de paiement direct possible en pièce jointe (BG-24).
+
+    • Acheteur = entité publique (BG-7) ; titulaire en agent du vendeur (EXT-FR-FE-BG-03).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-BG-03: Entreprise principale / titulaire
+    BT-11: Marché
+42_Escompte:
+  classeur: H_TVA_Regimes_particuliers
+  titre: 42 – Facture avec escompte pour paiement anticipé
+  famille: H. TVA et régimes particuliers
+  descriptif: Escompte proposé, avec une note AAB qui le décrit et un traitement de la TVA selon services ou biens (cas 22a
+    et 22b).
+  type_document: '380'
+  cadre: S1
+  codes: '380'
+  cas_usage: Cas 22a, 22b
+  profil: EN16931
+  attention: '• Note AAB décrivant l''escompte (obligatoire même en son absence, BR-FR-05).
+
+    • 22a services TVA à l''encaissement / 22b biens ou option débits : traitement différent de la TVA.'
+  commentaires:
+    BT-22: 'Note AAB : conditions d''escompte'
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+43_Exoneree:
+  classeur: H_TVA_Regimes_particuliers
+  titre: 43 – Facture exonérée de TVA
+  famille: H. TVA et régimes particuliers
+  descriptif: Catégorie E, avec motif BT-120 et code VATEX BT-121, ainsi que le numéro de TVA du vendeur (BT-31).
+  type_document: '380'
+  cadre: S1
+  codes: '380'
+  cas_usage: —
+  profil: EN16931
+  attention: '• Motif d''exonération obligatoire (BR-E-10).
+
+    • N° de TVA du vendeur ou du représentant fiscal obligatoire (BR-E-02).'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-31: Obligatoire
+    BT-120: Motif en clair
+    BT-121: Code VATEX-FR-…
+44_Franchise_en_base:
+  classeur: H_TVA_Regimes_particuliers
+  titre: 44 – Facture en franchise en base de TVA
+  famille: H. TVA et régimes particuliers
+  descriptif: 'Micro-entrepreneur : mention de l''art. 293 B du CGI, sans TVA facturée.'
+  type_document: '380'
+  cadre: S1
+  codes: '380'
+  cas_usage: —
+  profil: EN16931
+  attention: '• Catégorie utilisée pour la franchise en base à confirmer dans la XP Z12-012 (Z, sans n° de TVA, ou E avec
+    motif).
+
+    • Mention « TVA non applicable, art. 293 B du CGI ».'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-118: Z ou E selon XP Z12-012 – à confirmer
+45_TVA_sur_marge:
+  classeur: H_TVA_Regimes_particuliers
+  titre: 45 – Facture sous régime de TVA sur la marge
+  famille: H. TVA et régimes particuliers
+  descriptif: 'Biens d''occasion, agences de voyage… : mention du régime particulier, sans TVA apparente (cas 33).'
+  type_document: '380'
+  cadre: B1
+  codes: '380'
+  cas_usage: Cas 33
+  profil: EN16931
+  attention: • Codage exact de la catégorie et du motif à confirmer (XP Z12-014 cas 33).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+46_Assujetti_unique:
+  classeur: H_TVA_Regimes_particuliers
+  titre: 46 – Facture d'un membre d'assujetti unique
+  famille: H. TVA et régimes particuliers
+  descriptif: Note TXD « Membre d'un assujetti unique », assujetti unique en représentant fiscal (BG-11) (cas 29).
+  type_document: '380'
+  cadre: B1
+  codes: '380'
+  cas_usage: Cas 29
+  profil: EN16931
+  attention: '• Note TXD (BR-FR-CO-14) ; représentant fiscal obligatoire si BT-29-1 = 0231 (BR-FR-CO-15).
+
+    • Exemple AFNOR F202500001 : note TXD = MEMBRE_ASSUJETTI_UNIQUE.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-22o: Valeur utilisée dans l'exemple AFNOR F202500001
+    BT-21o: Code sujet
+    BT-62: Assujetti unique
+47_Devise_etrangere:
+  classeur: H_TVA_Regimes_particuliers
+  titre: 47 – Facture en devise étrangère
+  famille: H. TVA et régimes particuliers
+  descriptif: 'BT-5 ≠ EUR : le montant de TVA en euros (BT-111) devient obligatoire.'
+  type_document: '380'
+  cadre: B1
+  codes: '380'
+  cas_usage: —
+  profil: EN16931
+  attention: • BT-111 obligatoire, en EUR (BR-FR-CO-12).
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-5: Exemple
+    BT-111: Montant de TVA en EUR (@currencyID = EUR)
+48_TVA_deja_collectee:
+  classeur: H_TVA_Regimes_particuliers
+  titre: 48 – Facture après ticket déjà déclaré en B2C
+  famille: H. TVA et régimes particuliers
+  descriptif: 'Le client professionnel demande une facture après un ticket de caisse déjà déclaré en B2C : restaurant, péage,
+    commerce (cas 27, 28 et 30).'
+  type_document: '380'
+  cadre: S7
+  codes: 380 · B7/S7
+  cas_usage: Cas 27, 28, 30
+  profil: EN16931
+  attention: '• Cadre B7/S7 : TVA déjà collectée.
+
+    • Facture déjà payée : BT-113 = BT-112, BT-115 = 0.'
+  commentaires:
+    BT-23: B7 pour des biens
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    BT-9: Date du paiement effectif
+    BT-113: Égal au total TTC
+49_Sous_lignes:
+  classeur: I_Structure_avancee
+  titre: 49 – Facture avec sous-lignes
+  famille: I. Structure de facture avancée
+  descriptif: Lignes regroupées sous des lignes GROUP / DETAIL, par exemple un kit ou un livre-jouet (cas 38).
+  type_document: '380'
+  cadre: B1
+  codes: 380 · B1
+  cas_usage: Cas 38 (UC12)
+  profil: EXTENDED
+  attention: '• Total HT de la ligne GROUP = somme des lignes enfants (BR-FR-MV-05).
+
+    • Exemple AFNOR : UC12_F202600025_SOUS-LIGNE.'
+  commentaires:
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-162: Lignes enfants
+    EXT-FR-FE-163: Puis DETAIL pour les lignes enfants
+50_Multi_vendeurs:
+  classeur: I_Structure_avancee
+  titre: 50 – Facture multi-vendeurs
+  famille: I. Structure de facture avancée
+  descriptif: Plusieurs vendeurs sur une seule facture, avec une ligne GROUP et un numéro AFL par vendeur. Autofacture interdite
+    (cas 39).
+  type_document: '380'
+  cadre: S8
+  codes: 380 · B8/S8/M8
+  cas_usage: Cas 39 (UC10, UC11)
+  profil: EXTENDED
+  attention: '• Au moins une ligne GROUP sans parent (BR-FR-MV-02) ; AFL unique par GROUP (BR-FR-MV-12).
+
+    • Types auto-facturés interdits (BR-FR-MV-13).
+
+    • Nom, identifiant, pays du vendeur sur la ligne GROUP (EXT-FR-FE-164, 167, 177).
+
+    • Exemples AFNOR : UC10_F202600004, UC11_F202600022.'
+  commentaires:
+    BT-23: B8, M8
+    BT-21: 'Une note par code sujet : PMT, PMD, AAB obligatoires (BR-FR-05) ; BAR = B2B (BR-FR-20, BR-FR-31)'
+    EXT-FR-FE-163: Une ligne GROUP par vendeur
+    EXT-FR-FE-164: Vendeur de la ligne GROUP
+    EXT-FR-FE-167: SIREN du vendeur de la ligne

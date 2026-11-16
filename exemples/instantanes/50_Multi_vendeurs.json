@@ -1,0 +1,172 @@
+{
+ "charges": [],
+ "entete": {
+  "BT_1": "F202600500",
+  "BT_106": 1220.0,
+  "BT_109": 1220.0,
+  "BT_110": 211.0,
+  "BT_112": 1431.0,
+  "BT_113": 0.0,
+  "BT_115": 1431.0,
+  "BT_2": "2026-03-16",
+  "BT_20": "Paiement à 30 jours date de facture",
+  "BT_23": "S8",
+  "BT_24": "urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended",
+  "BT_27": "NOVA MARKET SAS",
+  "BT_3": "380",
+  "BT_30": "120000005",
+  "BT_31": "FR47120000005",
+  "BT_33": "SAS au capital de 500 000 EUR",
+  "BT_34": "120000005",
+  "BT_35": "30 rue de la Bourse",
+  "BT_37": "LYON",
+  "BT_38": "69002",
+  "BT_40": "FR",
+  "BT_44": "MAISON LUMEN SARL",
+  "BT_47": "200000008",
+  "BT_48": "FR37200000008",
+  "BT_49": "200000008",
+  "BT_5": "EUR",
+  "BT_50": "8 avenue du Port",
+  "BT_52": "MARSEILLE",
+  "BT_53": "13002",
+  "BT_55": "FR",
+  "BT_56_0": "Service comptabilité fournisseurs",
+  "BT_58": "fournisseurs@maison-lumen.example",
+  "BT_72": "2026-03-12",
+  "BT_81": "30",
+  "BT_82": "Virement",
+  "BT_84": "FR7699999000010001234567809",
+  "BT_86": "XBQAFRP0XXX",
+  "BT_9": "2026-04-15"
+ },
+ "lignes": [
+  {
+   "BT_126": "1",
+   "BT_128": "BOREAL-2026-0501",
+   "BT_128_1": "AFL",
+   "BT_129": null,
+   "BT_130": null,
+   "BT_131": 890.0,
+   "BT_146": null,
+   "BT_151": null,
+   "BT_152": null,
+   "BT_153": "Ventes ATELIER BOREAL SAS",
+   "BT_155": null,
+   "EXT_FR_FE_162": null,
+   "EXT_FR_FE_163": "GROUP",
+   "EXT_FR_FE_164": "ATELIER BOREAL SAS",
+   "EXT_FR_FE_167": "100000009",
+   "EXT_FR_FE_168": "FR88100000009",
+   "EXT_FR_FE_177": "FR",
+   "EXT_FR_FE_178": null,
+   "EXT_FR_FE_181": 178.0,
+   "EXT_FR_FE_184": 1068.0
+  },
+  {
+   "BT_126": "2",
+   "BT_128": "BOREAL-2026-0501",
+   "BT_128_1": "AFL",
+   "BT_129": 1.0,
+   "BT_130": "C62",
+   "BT_131": 890.0,
+   "BT_146": 890.0,
+   "BT_151": "S",
+   "BT_152": 20.0,
+   "BT_153": "Table en chêne massif 180 cm",
+   "BT_155": "TAB-CHE-180",
+   "EXT_FR_FE_162": "1",
+   "EXT_FR_FE_163": "DETAIL",
+   "EXT_FR_FE_164": null,
+   "EXT_FR_FE_167": "100000009",
+   "EXT_FR_FE_168": null,
+   "EXT_FR_FE_177": null,
+   "EXT_FR_FE_178": "#BOREAL-2026-0501#",
+   "EXT_FR_FE_181": 178.0,
+   "EXT_FR_FE_184": 1068.0
+  },
+  {
+   "BT_126": "3",
+   "BT_128": "ORION-2026-0502",
+   "BT_128_1": "AFL",
+   "BT_129": null,
+   "BT_130": null,
+   "BT_131": 330.0,
+   "BT_146": null,
+   "BT_151": null,
+   "BT_152": null,
+   "BT_153": "Ventes CONSEIL ORION SARL",
+   "BT_155": null,
+   "EXT_FR_FE_162": null,
+   "EXT_FR_FE_163": "GROUP",
+   "EXT_FR_FE_164": "CONSEIL ORION SARL",
+   "EXT_FR_FE_167": "310000013",
+   "EXT_FR_FE_168": "FR38310000013",
+   "EXT_FR_FE_177": "FR",
+   "EXT_FR_FE_178": null,
+   "EXT_FR_FE_181": 33.0,
+   "EXT_FR_FE_184": 363.0
+  },
+  {
+   "BT_126": "4",
+   "BT_128": "ORION-2026-0502",
+   "BT_128_1": "AFL",
+   "BT_129": 3.0,
+   "BT_130": "HUR",
+   "BT_131": 330.0,
+   "BT_146": 110.0,
+   "BT_151": "S",
+   "BT_152": 10.0,
+   "BT_153": "Travaux d'aménagement intérieur (logement de plus de 2 ans)",
+   "BT_155": null,
+   "EXT_FR_FE_162": "3",
+   "EXT_FR_FE_163": "DETAIL",
+   "EXT_FR_FE_164": null,
+   "EXT_FR_FE_167": "310000013",
+   "EXT_FR_FE_168": null,
+   "EXT_FR_FE_177": null,
+   "EXT_FR_FE_178": "#ORION-2026-0502#",
+   "EXT_FR_FE_181": 33.0,
+   "EXT_FR_FE_184": 363.0
+  }
+ ],
+ "notes": [
+  {
+   "BT_21": "PMD",
+   "BT_22": "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."
+  },
+  {
+   "BT_21": "PMT",
+   "BT_22": "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."
+  },
+  {
+   "BT_21": "AAB",
+   "BT_22": "Pas d'escompte pour paiement anticipé."
+  },
+  {
+   "BT_21": "BAR",
+   "BT_22": "B2B"
+  },
+  {
+   "BT_21": "AAI",
+   "BT_22": "Facture multi-vendeurs : chaque ligne GROUP regroupe les ventes d'un vendeur, identifié sur la ligne et par son numéro de facture (AFL)."
+  }
+ ],
+ "remises": [],
+ "tva": [
+  {
+   "BT_116": 890.0,
+   "BT_117": 178.0,
+   "BT_118": "S",
+   "BT_119": 20.0,
+   "BT_120": "#BOREAL-2026-0501#"
+  },
+  {
+   "BT_116": 330.0,
+   "BT_117": 33.0,
+   "BT_118": "S",
+   "BT_119": 10.0,
+   "BT_120": "#ORION-2026-0502#"
+  }
+ ]
+}

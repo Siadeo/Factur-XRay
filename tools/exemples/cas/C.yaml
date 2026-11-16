@@ -1,0 +1,63 @@
+# C. Corrections : rectificatives, avoirs, note de débit. Données fictives.
+# La facture d'origine est l'exemple 01 (F202600010 du 16/03/2026 : 2 tables et 8 chaises).
+classeur: C_Corrections
+cas:
+  12_Rectificative:
+    entete:
+      BT_25: F202600010
+      BT_26: 2026-03-16
+      EXT_FR_FE_02: "380"
+      BT_13: CMD-LUMEN-2026-118
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Facture rectificative : annule et remplace la facture F202600010 (prix unitaire des chaises erroné)."}
+    lignes:
+      - {BT_155: TAB-CHE-180, BT_153: Table en chêne massif 180 cm, BT_129: 2, BT_146: 890}
+      - {BT_155: CHA-CHE-01, BT_153: Chaise en chêne, BT_129: 8, BT_146: 135}
+
+  13_Avoir_total:
+    entete:
+      BT_25: F202600010
+      BT_26: 2026-03-16
+      EXT_FR_FE_02: "380"
+      BT_20: Avoir remboursé par virement sous 15 jours
+    lignes:   # montants positifs : c'est le type 381 qui porte le sens « avoir »
+      - {BT_155: TAB-CHE-180, BT_153: Table en chêne massif 180 cm, BT_129: 2, BT_146: 890}
+      - {BT_155: CHA-CHE-01, BT_153: Chaise en chêne, BT_129: 8, BT_146: 145}
+
+  14_Avoir_partiel:
+    entete:
+      BT_25: F202600010
+      BT_26: 2026-03-16
+      BT_20: Avoir imputable sur la prochaine facture
+    lignes:
+      - {BT_155: CHA-CHE-01, BT_153: Retour d'une chaise en chêne (défaut de finition), BT_129: 1, BT_146: 145}
+
+  15_Avoir_remise_globale:
+    entete:
+      BT_12: ACCORD-COMMERCIAL-LUMEN-2025   # contrat obligatoire (BR-FR-CO-03)
+      BT_73: 2025-01-01
+      BT_74: 2025-12-31
+      BT_20: Remise déduite du prochain règlement
+    lignes:
+      - {BT_153: "Remise de fin d'année : 2 % du chiffre d'affaires 2025 (62 500 € HT)", BT_129: 1, BT_146: 1250}
+
+  16_Avoir_net_de_taxe:
+    entete:
+      BT_25: F202600010
+      BT_26: 2026-03-16
+      BT_20: Avoir imputable sur la prochaine facture
+    lignes:
+      - {BT_153: Indemnité commerciale pour retard de livraison, BT_129: 1, BT_146: 150, BT_151: E}
+    tva:
+      E: {BT_120: Avoir net de taxe (sans incidence sur la TVA), BT_121: VATEX-FR-CNWVAT}
+
+  17_Note_de_debit:
+    cadre: S1
+    entete:
+      BT_25: F202600010
+      BT_26: 2026-03-16
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Refacturation de frais complémentaires liés à la facture F202600010."}
+    lignes:
+      - {BT_153: Frais de livraison express demandés après commande, BT_129: 1, BT_146: 95}
+      - {BT_153: Frais de manutention à l'étage, BT_129: 2, BT_130: HUR, BT_146: 45}

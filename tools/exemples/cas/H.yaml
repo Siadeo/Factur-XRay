@@ -1,0 +1,76 @@
+# H. TVA et régimes particuliers. Données fictives.
+classeur: H_TVA_Regimes_particuliers
+cas:
+  42_Escompte:
+    vendeur: prestataire
+    notes:
+      - {BT_21: PMD, BT_22: "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."}
+      - {BT_21: PMT, BT_22: "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."}
+      - {BT_21: AAB, BT_22: "Escompte de 2 % pour paiement sous 10 jours ; la TVA déductible doit être réduite à proportion de l'escompte obtenu."}
+      - {BT_21: BAR, BT_22: B2B}
+    lignes:
+      - {BT_153: Formation des équipes à l'outil de gestion, BT_129: 2, BT_130: DAY, BT_146: 950}
+
+  43_Exoneree:
+    vendeur: prestataire
+    lignes:
+      - {BT_153: "Formation professionnelle continue : comptabilité et réforme de la facturation", BT_129: 3, BT_130: DAY, BT_146: 700, BT_151: E}
+    tva:
+      E: {BT_120: "Exonération de TVA, art. 261-4-4° a du CGI (formation professionnelle continue)", BT_121: VATEX-FR-CGI261-4}
+
+  44_Franchise_en_base:
+    vendeur: micro
+    entete:
+      BT_32: "500000112"     # sans n° de TVA : SIREN en identifiant fiscal (BR-E-02)
+    lignes:
+      - {BT_153: Création d'une identité visuelle, BT_129: 1, BT_146: 1200, BT_151: E}
+    tva:
+      E: {BT_120: "TVA non applicable, art. 293 B du CGI", BT_121: VATEX-FR-FRANCHISE}
+
+  45_TVA_sur_marge:
+    lignes:
+      - {BT_153: "Commode Louis-Philippe d'occasion", BT_129: 1, BT_146: 1450, BT_151: E}
+    tva:
+      E: {BT_120: "Régime particulier - Biens d'occasion (art. 297 A du CGI) : TVA sur la marge", BT_121: VATEX-EU-F}
+
+  46_Assujetti_unique:
+    vendeur: assujetti_unique_membre
+    entete:
+      BT_29d: "170000004"      # identifiant de l'assujetti unique
+      BT_29d_1: "0231"
+      BT_62: GROUPE BOREAL TVA (assujetti unique)
+      BT_63: FR20170000004
+      BT_64: 12 rue des Forges
+      BT_67: "69002"
+      BT_66: LYON
+      BT_69: FR
+    notes_plus:
+      - {BT_21: TXD, BT_22: MEMBRE_ASSUJETTI_UNIQUE}
+    lignes:
+      - {BT_153: Cuisine équipée sur mesure, BT_129: 1, BT_146: 7800}
+
+  47_Devise_etrangere:
+    entete:
+      BT_5: USD
+      BT_111: 540.96          # TVA en euros (588,00 USD × 0,92), BR-FR-CO-12
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Taux de change appliqué pour la TVA en euros : 1 USD = 0,9200 EUR."}
+    lignes:
+      - {BT_155: TAB-CHE-180, BT_153: Table en chêne massif 180 cm, BT_129: 2, BT_146: 970}
+      - {BT_155: CHA-CHE-01, BT_153: Chaise en chêne, BT_129: 8, BT_146: 125}
+
+  48_TVA_deja_collectee:
+    vendeur: brasserie
+    entete:
+      BT_9: null               # facture déjà payée (B7/S7) : pas d'échéance (BR-FR-CO-07)
+      BT_81: "48"
+      BT_82: Carte bancaire
+      BT_84: null
+      BT_86: null
+      BT_20: Payé par carte bancaire le 12/03/2026 (ticket de caisse n° 2026-03-0457)
+      BT_113: "={BT_112}"
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Facture établie à la demande du client après le ticket de caisse n° 2026-03-0457 du 12/03/2026, TVA déjà collectée."}
+    lignes:
+      - {BT_153: Repas d'affaires (4 couverts), BT_129: 4, BT_146: 38.5, BT_152: 10}
+      - {BT_153: Boissons alcoolisées, BT_129: 2, BT_146: 32, BT_152: 20}

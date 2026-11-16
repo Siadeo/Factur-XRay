@@ -1,0 +1,65 @@
+# F. Tiers payeurs et intermédiaires. Données fictives.
+classeur: F_Tiers_Intermediaires
+cas:
+  31_Tiers_payeur:
+    vendeur: prestataire
+    entete:
+      EXT_FR_FE_BG_02: MUTUELLE HORIZON
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Facture réglée directement par MUTUELLE HORIZON, tiers payeur désigné au contrat."}
+    lignes:
+      - {BT_153: Bilan de prévention des risques professionnels, BT_129: 2, BT_130: DAY, BT_146: 780}
+
+  32_Prise_en_charge_partielle:
+    vendeur: prestataire
+    entete:
+      EXT_FR_FE_BG_02: MUTUELLE HORIZON
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Prise en charge : 60 % par MUTUELLE HORIZON (1 123,20 € TTC), 40 % restant dû par l'acheteur (748,80 € TTC)."}
+    lignes:
+      - {BT_153: Bilan de prévention des risques professionnels, BT_129: 2, BT_130: DAY, BT_146: 780}
+
+  33_Paiement_a_un_tiers:
+    entete:
+      BT_59: GROUPE BOREAL HOLDING
+      BT_61: "110000007"
+      BT_84: FR7699999000030003456789085
+      BT_86: XBQCFRP0XXX
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Paiement à effectuer au profit de GROUPE BOREAL HOLDING (centralisation de trésorerie du groupe)."}
+    lignes:
+      - {BT_155: BIB-MUR-01, BT_153: Bibliothèque murale sur mesure, BT_129: 1, BT_146: 2400}
+
+  34_Tiers_recepteur_acheteur:
+    entete:
+      AGENT_ACHETEUR: CENTRALE ACHATS SUD
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Facture reçue et traitée par CENTRALE ACHATS SUD, mandatée par MAISON LUMEN SARL."}
+    lignes:
+      - {BT_155: CHA-CHE-01, BT_153: Chaise en chêne, BT_129: 12, BT_146: 145}
+
+  35_Debours:
+    vendeur: prestataire
+    entete:
+      BT_31: null          # catégorie O : pas de n° de TVA (BR-O-02)
+      BT_48: null
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Débours : frais avancés au nom et pour le compte du client, refacturés à l'identique sur justificatifs."}
+    lignes:
+      - {BT_153: Frais de greffe avancés pour le compte du client, BT_129: 1, BT_146: 37.45, BT_151: O}
+      - {BT_153: Frais d'annonce légale avancés, BT_129: 1, BT_146: 189.6, BT_151: O}
+    tva:
+      O: {BT_120: "Débours (art. 267 II-2° du CGI)", BT_121: VATEX-EU-O}
+
+  36_Marketplace_mandat:
+    entete:
+      BT_1: NOVA-2026-018355   # numérotation propre à la place de marché
+      FACTURANT: NOVA MARKET SAS
+      BT_59: NOVA MARKET SAS
+      BT_61: "120000005"
+      BT_84: FR7699999000040004567890120
+      BT_86: XBQDFRP0XXX
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Facture émise par NOVA MARKET SAS au nom et pour le compte d'ATELIER BOREAL SAS, qui encaisse le paiement."}
+    lignes:
+      - {BT_155: LAM-LAI-02, BT_153: Lampe en laiton, BT_129: 2, BT_146: 79}

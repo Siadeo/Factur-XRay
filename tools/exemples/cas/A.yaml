@@ -1,0 +1,73 @@
+# A. Factures de base. Données fictives. Les montants sont calculés par Excel.
+classeur: A_Factures_de_base
+cas:
+  01_Biens:
+    entete:
+      BT_13: CMD-LUMEN-2026-118
+      BT_72: 2026-03-12
+    lignes:
+      - {BT_155: TAB-CHE-180, BT_153: Table en chêne massif 180 cm, BT_129: 2, BT_146: 890}
+      - {BT_155: CHA-CHE-01, BT_153: Chaise en chêne, BT_129: 8, BT_146: 145}
+
+  02_Services_encaissement:
+    vendeur: prestataire
+    entete:
+      BT_12: CONTRAT-ORION-2026-04
+    lignes:
+      - {BT_153: Audit de l'organisation comptable, BT_129: 3, BT_130: DAY, BT_146: 850}
+      - {BT_153: Restitution et recommandations, BT_129: 4, BT_130: HUR, BT_146: 120}
+
+  03_Services_debits:
+    vendeur: prestataire
+    exigibilite: "5"   # BT-8 : option pour le paiement de la TVA d'après les débits
+    entete:
+      BT_12: CONTRAT-ORION-2026-04
+    lignes:
+      - {BT_153: Audit de l'organisation comptable, BT_129: 3, BT_130: DAY, BT_146: 850}
+      - {BT_153: Restitution et recommandations, BT_129: 4, BT_130: HUR, BT_146: 120}
+
+  04_Mixte:
+    cadre: M1
+    entete:
+      BT_13: CMD-LUMEN-2026-131
+      BT_72: 2026-03-13
+    lignes:
+      - {BT_153: Bibliothèque murale sur mesure, BT_127: Livraison de biens, BT_129: 1, BT_146: 2400}
+      - {BT_153: Pose et installation sur site, BT_127: Prestation de services, BT_129: 6, BT_130: HUR, BT_146: 65}
+
+  05_Deja_payee:
+    cadre: B2
+    entete:
+      BT_9: 2026-03-14       # date du paiement, avant l'émission (BR-FR-CO-07)
+      BT_72: 2026-03-14
+      BT_81: "48"
+      BT_82: Carte bancaire
+      BT_84: null
+      BT_86: null
+      BT_20: Facture payée comptant par carte bancaire le 14/03/2026
+      BT_113: "={BT_112}"     # déjà payée : BT-113 = BT-112, BT-115 = 0
+    lignes:
+      - {BT_155: LAM-LAI-02, BT_153: Lampe en laiton, BT_129: 3, BT_146: 79}
+
+  06_Multi_cmd_livraisons:
+    lignes:
+      - {BT_155: TAB-CHE-180, BT_153: Table en chêne massif 180 cm, BT_129: 1, BT_146: 890,
+         REF_COMMANDE_LIGNE: CMD-LUMEN-2026-101, REF_LIVRAISON_LIGNE: BL-2026-0451,
+         EXT_FR_FE_149: Boutique Lumen Vieux-Port, EXT_FR_FE_151: 2 quai du Port, EXT_FR_FE_155: "13002",
+         EXT_FR_FE_154: MARSEILLE, EXT_FR_FE_157: FR, EXT_FR_FE_158: 2026-03-03}
+      - {BT_155: CHA-CHE-01, BT_153: Chaise en chêne, BT_129: 6, BT_146: 145,
+         REF_COMMANDE_LIGNE: CMD-LUMEN-2026-109, REF_LIVRAISON_LIGNE: BL-2026-0467,
+         EXT_FR_FE_149: Boutique Lumen Aix, EXT_FR_FE_151: 15 cours Mirabeau, EXT_FR_FE_155: "13100",
+         EXT_FR_FE_154: AIX-EN-PROVENCE, EXT_FR_FE_157: FR, EXT_FR_FE_158: 2026-03-10}
+
+  07_Periodique_abonnement:
+    vendeur: prestataire
+    entete:
+      BT_12: ABO-ORION-2026
+      BT_73: 2026-02-01
+      BT_74: 2026-02-28
+    lignes:
+      - {BT_153: Abonnement mensuel assistance comptable, BT_129: 1, BT_130: MON, BT_146: 450,
+         BT_134: 2026-02-01, BT_135: 2026-02-28}
+      - {BT_153: Heures d'assistance complémentaires, BT_129: 2.5, BT_130: HUR, BT_146: 90,
+         BT_134: 2026-02-01, BT_135: 2026-02-28}

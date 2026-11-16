@@ -1,0 +1,154 @@
+# E. Mandat de facturation et autofacturation. Données fictives.
+# Autofacturation : la COOPERATIVE DU VAL DE LOIRE (acheteur) émet la facture au nom de la
+# FERME DES TROIS CHENES (vendeur), en vertu d'un mandat d'autofacturation.
+classeur: E_Mandat_Autofacturation
+cas:
+  22_Mandat_pour_compte:
+    entete:
+      BT_1: GESTIA-BOREAL-2026-0042    # numérotation propre au mandataire
+      FACTURANT: GESTIA FACTURATION SAS
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Facture émise par GESTIA FACTURATION SAS au nom et pour le compte d'ATELIER BOREAL SAS (mandat de facturation du 02/01/2026)."}
+    lignes:
+      - {BT_155: TAB-CHE-180, BT_153: Table en chêne massif 180 cm, BT_129: 1, BT_146: 890}
+
+  23_Autofacture:
+    vendeur: fournisseur_auto
+    acheteur: cooperative
+    entete:
+      BT_1: AUTOF2026-0230
+      BT_84: FR7699999000050005678901236
+      BT_86: XBQEFRP0XXX
+      BT_73: 2026-02-01
+      BT_74: 2026-02-28
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Autofacturation : facture établie par l'acheteur au nom et pour le compte du vendeur (mandat du 05/01/2026)."}
+    lignes:
+      - {BT_153: Lait cru de vache, BT_129: 30000, BT_130: LTR, BT_146: 0.489, BT_152: 5.5}
+
+  24_Autofacture_acompte:
+    vendeur: fournisseur_auto
+    acheteur: cooperative
+    entete:
+      BT_1: AUTOF2026-0240
+      BT_84: FR7699999000050005678901236
+      BT_86: XBQEFRP0XXX
+      BT_20: Acompte versé à réception
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Autofacturation : facture d'acompte établie par l'acheteur au nom et pour le compte du vendeur."}
+    lignes:
+      - {BT_153: "Acompte de 40 % sur les travaux de moisson 2026", BT_129: 1, BT_146: 2000}
+
+  25_Avoir_autofacture:
+    vendeur: fournisseur_auto
+    acheteur: cooperative
+    entete:
+      BT_1: AUTOF2026-0250
+      BT_25: AUTOF2026-0230
+      BT_26: 2026-03-16
+      EXT_FR_FE_02: "389"
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Autofacturation : avoir établi par l'acheteur au nom et pour le compte du vendeur."}
+    lignes:
+      - {BT_153: "Réfaction qualité sur le lait de février (taux cellulaire)", BT_129: 1, BT_146: 245, BT_152: 5.5}
+
+  26_Autofacture_rectif:
+    vendeur: fournisseur_auto
+    acheteur: cooperative
+    entete:
+      BT_1: AUTOF2026-0260
+      BT_25: AUTOF2026-0230
+      BT_26: 2026-03-16
+      EXT_FR_FE_02: "389"
+      BT_84: FR7699999000050005678901236
+      BT_86: XBQEFRP0XXX
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Autofacture rectificative : annule et remplace l'autofacture AUTOF2026-0230 (volume corrigé)."}
+    lignes:
+      - {BT_153: Lait cru de vache, BT_129: 29500, BT_130: LTR, BT_146: 0.489, BT_152: 5.5}
+
+  27_Autofacture_affacturee:
+    vendeur: fournisseur_auto
+    acheteur: cooperative
+    avec: [affactureur]
+    entete:
+      BT_1: AUTOF2026-0270
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Autofacturation : facture établie par l'acheteur au nom et pour le compte du vendeur. Créance cédée à FACTOR AZUR SA, à qui le paiement doit être adressé."}
+    lignes:
+      - {BT_153: Lait cru de vache, BT_129: 28000, BT_130: LTR, BT_146: 0.489, BT_152: 5.5}
+
+  28_Autofacture_particulier:
+    vendeur: particulier
+    acheteur: boreal_acheteur
+    entete:
+      BT_1: AUTOF2026-0280
+      BT_48: null          # catégorie O : pas de n° de TVA (BR-O-02)
+      BT_84: null
+      BT_86: null
+      BT_81: "10"
+      BT_82: Espèces
+      BT_20: Payé comptant à l'enlèvement
+    notes:
+      - {BT_21: PMD, BT_22: "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."}
+      - {BT_21: PMT, BT_22: "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."}
+      - {BT_21: AAB, BT_22: Pas d'escompte pour paiement anticipé.}
+      - {BT_21: BAR, BT_22: OUTOFSCOPE}
+      - {BT_21: AAI, BT_22: "Bordereau d'achat établi par l'acheteur professionnel : vendeur particulier non assujetti à la TVA."}
+    lignes:
+      - {BT_153: Armoire normande ancienne en chêne, BT_129: 1, BT_146: 650, BT_151: O}
+    tva:
+      O: {BT_120: Vente par un particulier non assujetti, BT_121: VATEX-EU-O}
+
+  29_Autofacture_bidirect:
+    vendeur: fournisseur_auto
+    acheteur: cooperative
+    entete:
+      BT_1: AUTOF2026-0290
+      BT_72: 2026-02-28
+      BT_73: 2026-02-01
+      BT_74: 2026-02-28
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Autofacture bidirectionnelle : achats de lait à la ferme (ligne 10) et ventes de services de la coopérative à la ferme (ligne 20), compensés sur un même document."}
+    lignes:
+      - {BT_126: 10, EXT_FR_FE_163: GROUP, BT_153: Achats de lait de la coopérative, BT_128: AUTOF2026-0290, BT_128_1: AFL,
+         EXT_FR_FE_164: FERME DES TROIS CHENES, EXT_FR_FE_167: "600000103", EXT_FR_FE_177: FR, EXT_FR_FE_168: FR33600000103}
+      - {BT_126: 11, EXT_FR_FE_162: 10, EXT_FR_FE_163: DETAIL, BT_153: Lait cru de vache, BT_129: 30000, BT_130: LTR,
+         BT_146: 0.489, BT_152: 5.5, BT_128: AUTOF2026-0290, BT_128_1: AFL, EXT_FR_FE_167: "600000103"}
+      - {BT_126: 20, EXT_FR_FE_163: GROUP, BT_153: Services de la coopérative à la ferme, BT_128: COOP-F2026-0291, BT_128_1: AFL,
+         EXT_FR_FE_164: COOPERATIVE DU VAL DE LOIRE, EXT_FR_FE_167: "130000003", EXT_FR_FE_177: FR, EXT_FR_FE_168: FR75130000003}
+      - {BT_126: 21, EXT_FR_FE_162: 20, EXT_FR_FE_163: DETAIL, BT_153: Cotisation interprofessionnelle, BT_129: 30000, BT_130: LTR,
+         BT_146: -0.0060, BT_128: COOP-F2026-0291, BT_128_1: AFL, EXT_FR_FE_167: "130000003"}
+      - {BT_126: 22, EXT_FR_FE_162: 20, EXT_FR_FE_163: DETAIL, BT_153: Location de cuve réfrigérée, BT_129: 1, BT_130: MON,
+         BT_146: -85, BT_128: COOP-F2026-0291, BT_128_1: AFL, EXT_FR_FE_167: "130000003"}
+
+  30a_Netting_autofacture:
+    fiche: 30_Netting_facture_croisee
+    vendeur: fournisseur_auto
+    acheteur: cooperative
+    entete:
+      BT_1: AUTOF2026-0300
+      BT_84: FR7699999000050005678901236
+      BT_86: XBQEFRP0XXX
+      BT_73: 2026-02-01
+      BT_74: 2026-02-28
+      BT_113: 306       # montant compensé avec la facture croisée F2026-0301 (exemple 30b)
+    notes_plus:
+      - {BT_21: PAI, BT_22: "Compensation partielle avec la facture F202600301 de la coopérative (306,00 € TTC)."}
+      - {BT_21: AAI, BT_22: "Autofacturation : facture établie par l'acheteur au nom et pour le compte du vendeur."}
+    lignes:
+      - {BT_153: Lait cru de vache, BT_129: 30000, BT_130: LTR, BT_146: 0.489, BT_152: 5.5}
+
+  30b_Netting_facture_croisee:
+    fiche: 30_Netting_facture_croisee
+    type: "380"
+    vendeur: cooperative_vendeur
+    acheteur: ferme_acheteur
+    entete:
+      BT_73: 2026-02-01
+      BT_74: 2026-02-28
+    notes_plus:
+      - {BT_21: PAI, BT_22: "Compensation avec l'autofacture AUTOF2026-0300 : montant déduit du règlement de la coopérative."}
+    lignes:
+      - {BT_153: Location de cuve réfrigérée, BT_129: 1, BT_130: MON, BT_146: 85}
+      - {BT_153: Analyses qualité du lait, BT_129: 4, BT_146: 42.5}

@@ -1,0 +1,66 @@
+# G. BTP, sous-traitance, cotraitance. Données fictives.
+# Chantier : résidence Les Pins (maître d'ouvrage SCI LES PINS, titulaire SOGEBAT SA, sous-traitant BATI SUD).
+classeur: G_BTP_Sous_cotraitance
+cas:
+  37_Sous_traitant_autoliq:
+    vendeur: sous_traitant
+    acheteur: titulaire_acheteur
+    entete:
+      BT_11: CHANTIER-RESIDENCE-LES-PINS
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Autoliquidation : TVA due par le preneur (art. 283-2 nonies du CGI)."}
+    lignes:
+      - {BT_153: Lot gros œuvre - fondations, BT_129: 1, BT_146: 18500, BT_151: AE}
+    tva:
+      AE: {BT_120: Autoliquidation, BT_121: VATEX-EU-AE}
+
+  38_Sous_traitant_pay_direct:
+    vendeur: sous_traitant
+    acheteur: titulaire_acheteur
+    entete:
+      BT_11: CHANTIER-RESIDENCE-LES-PINS
+      EXT_FR_FE_BG_02: SCI LES PINS
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Sous-traitant accepté, paiement direct par le maître d'ouvrage SCI LES PINS (loi n° 75-1334)."}
+      - {BT_21: AAI, BT_22: "Autoliquidation : TVA due par le preneur (art. 283-2 nonies du CGI)."}
+    lignes:
+      - {BT_153: Lot gros œuvre - élévation des murs, BT_129: 1, BT_146: 24000, BT_151: AE}
+    tva:
+      AE: {BT_120: Autoliquidation, BT_121: VATEX-EU-AE}
+
+  39_Titulaire_apres_pay_direct:
+    vendeur: titulaire
+    acheteur: sci_pins
+    entete:
+      BT_11: CHANTIER-RESIDENCE-LES-PINS
+      BT_113: 24000      # part payée directement au sous-traitant (exemple 38, HT autoliquidé)
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Dont 24 000 € réglés directement par le maître d'ouvrage au sous-traitant BATI SUD SARL (paiement direct)."}
+    lignes:
+      - {BT_153: "Travaux de construction - situation n° 3 (prestations du titulaire)", BT_129: 1, BT_146: 56000}
+      - {BT_153: "Travaux de construction - part sous-traitée (BATI SUD SARL)", BT_129: 1, BT_146: 24000}
+
+  40_Cotraitant:
+    vendeur: sous_traitant
+    acheteur: sci_pins
+    entete:
+      BT_11: MARCHE-RESIDENCE-LES-PINS
+      EXT_FR_FE_BG_03: SOGEBAT SA
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Cotraitant du groupement conjoint SOGEBAT / BATI SUD ; mandataire : SOGEBAT SA."}
+    lignes:
+      - {BT_153: "Lot menuiseries extérieures - part du cotraitant", BT_129: 1, BT_146: 31000}
+
+  41_Demande_paiement_B2G:
+    vendeur: sous_traitant
+    acheteur: acheteur_public
+    entete:
+      BT_10: SERVICE-TECHNIQUE-VALCOURT
+      BT_11: MARCHE-2026-VALCOURT-012
+      EXT_FR_FE_BG_03: SOGEBAT SA
+      BT_122: ATT-PAIEMENT-DIRECT-2026-07
+      BT_123: DOCUMENT_ANNEXE     # code de qualification de la pièce jointe (BR-FR-17)
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Demande de paiement direct du sous-traitant, transmise via le titulaire SOGEBAT SA. Pièce jointe : attestation d'acceptation du sous-traitant et d'agrément des conditions de paiement."}
+    lignes:
+      - {BT_153: "Rénovation de l'école communale - lot peinture", BT_129: 1, BT_146: 14200}

@@ -1,0 +1,35 @@
+# D. Affacturage. Données fictives. L'affactureur FACTOR AZUR SA reçoit le paiement (BG-10).
+classeur: D_Affacturage
+cas:
+  18_Affacturee:
+    avec: [affactureur]
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Pour être libératoire, votre règlement doit être effectué directement à l'ordre de FACTOR AZUR SA, qui le reçoit par subrogation."}
+    lignes:
+      - {BT_155: BUF-NOY-02, BT_153: Buffet en noyer, BT_129: 2, BT_146: 1350}
+
+  19_Avoir_affacture:
+    avec: [affactureur]
+    entete:
+      BT_25: F202600180      # facture affacturée (exemple 18)
+      BT_26: 2026-03-16
+      EXT_FR_FE_02: "393"
+    lignes:
+      - {BT_155: BUF-NOY-02, BT_153: Retour d'un buffet en noyer, BT_129: 1, BT_146: 1350}
+
+  20_Rectificative_affacturee:
+    avec: [affactureur]
+    entete:
+      BT_25: F202600180
+      BT_26: 2026-03-16
+      EXT_FR_FE_02: "393"
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Facture rectificative : annule et remplace la facture affacturée F202600180."}
+    lignes:
+      - {BT_155: BUF-NOY-02, BT_153: Buffet en noyer, BT_129: 2, BT_146: 1290}
+
+  21_Affactureur_inconnu:
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Cette créance pourra être cédée à un établissement d'affacturage après son émission."}
+    lignes:
+      - {BT_155: BUF-NOY-02, BT_153: Buffet en noyer, BT_129: 1, BT_146: 1350}

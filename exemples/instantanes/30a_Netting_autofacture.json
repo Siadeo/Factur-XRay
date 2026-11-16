@@ -1,0 +1,89 @@
+{
+ "charges": [],
+ "entete": {
+  "BT_1": "AUTOF2026-0300",
+  "BT_106": 14670.0,
+  "BT_109": 14670.0,
+  "BT_110": 806.85,
+  "BT_112": 15476.85,
+  "BT_113": 306.0,
+  "BT_115": 15170.85,
+  "BT_2": "2026-03-16",
+  "BT_20": "Paiement à 30 jours date de facture",
+  "BT_23": "B1",
+  "BT_24": "urn:cen.eu:en16931:2017",
+  "BT_27": "FERME DES TROIS CHENES",
+  "BT_3": "389",
+  "BT_30": "600000103",
+  "BT_31": "FR33600000103",
+  "BT_33": "EARL au capital de 7 500 EUR",
+  "BT_34": "600000103",
+  "BT_35": "Lieu-dit Les Trois Chênes",
+  "BT_37": "ANGERS",
+  "BT_38": "49000",
+  "BT_40": "FR",
+  "BT_44": "COOPERATIVE DU VAL DE LOIRE",
+  "BT_47": "130000003",
+  "BT_48": "FR75130000003",
+  "BT_49": "130000003",
+  "BT_5": "EUR",
+  "BT_50": "18 route de Saumur",
+  "BT_52": "ANGERS",
+  "BT_53": "49000",
+  "BT_55": "FR",
+  "BT_73": "2026-02-01",
+  "BT_74": "2026-02-28",
+  "BT_81": "30",
+  "BT_82": "Virement",
+  "BT_84": "FR7699999000050005678901236",
+  "BT_86": "XBQEFRP0XXX",
+  "BT_9": "2026-04-15"
+ },
+ "lignes": [
+  {
+   "BT_126": "1",
+   "BT_129": 30000.0,
+   "BT_130": "LTR",
+   "BT_131": 14670.0,
+   "BT_146": 0.489,
+   "BT_151": "S",
+   "BT_152": 5.5,
+   "BT_153": "Lait cru de vache"
+  }
+ ],
+ "notes": [
+  {
+   "BT_21": "PMD",
+   "BT_22": "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."
+  },
+  {
+   "BT_21": "PMT",
+   "BT_22": "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."
+  },
+  {
+   "BT_21": "AAB",
+   "BT_22": "Pas d'escompte pour paiement anticipé."
+  },
+  {
+   "BT_21": "BAR",
+   "BT_22": "B2B"
+  },
+  {
+   "BT_21": "PAI",
+   "BT_22": "Compensation partielle avec la facture F202600301 de la coopérative (306,00 € TTC)."
+  },
+  {
+   "BT_21": "AAI",
+   "BT_22": "Autofacturation : facture établie par l'acheteur au nom et pour le compte du vendeur."
+  }
+ ],
+ "remises": [],
+ "tva": [
+  {
+   "BT_116": 14670.0,
+   "BT_117": 806.85,
+   "BT_118": "S",
+   "BT_119": 5.5
+  }
+ ]
+}

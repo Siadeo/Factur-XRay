@@ -1,0 +1,87 @@
+{
+ "charges": [],
+ "entete": {
+  "BT_1": "F202600450",
+  "BT_106": 1450.0,
+  "BT_109": 1450.0,
+  "BT_110": 0.0,
+  "BT_112": 1450.0,
+  "BT_113": 0.0,
+  "BT_115": 1450.0,
+  "BT_2": "2026-03-16",
+  "BT_20": "Paiement à 30 jours date de facture",
+  "BT_23": "B1",
+  "BT_24": "urn:cen.eu:en16931:2017",
+  "BT_27": "ATELIER BOREAL SAS",
+  "BT_28": "Boréal Mobilier",
+  "BT_3": "380",
+  "BT_30": "100000009",
+  "BT_31": "FR88100000009",
+  "BT_33": "SAS au capital de 80 000 EUR",
+  "BT_34": "100000009",
+  "BT_35": "12 rue des Forges",
+  "BT_37": "LYON",
+  "BT_38": "69002",
+  "BT_40": "FR",
+  "BT_41": "Claire Martin",
+  "BT_43": "compta@atelier-boreal.example",
+  "BT_44": "MAISON LUMEN SARL",
+  "BT_47": "200000008",
+  "BT_48": "FR37200000008",
+  "BT_49": "200000008",
+  "BT_5": "EUR",
+  "BT_50": "8 avenue du Port",
+  "BT_52": "MARSEILLE",
+  "BT_53": "13002",
+  "BT_55": "FR",
+  "BT_56_0": "Service comptabilité fournisseurs",
+  "BT_58": "fournisseurs@maison-lumen.example",
+  "BT_72": "2026-03-12",
+  "BT_81": "30",
+  "BT_82": "Virement",
+  "BT_84": "FR7699999000010001234567809",
+  "BT_86": "XBQAFRP0XXX",
+  "BT_9": "2026-04-15"
+ },
+ "lignes": [
+  {
+   "BT_126": "1",
+   "BT_129": 1.0,
+   "BT_130": "C62",
+   "BT_131": 1450.0,
+   "BT_146": 1450.0,
+   "BT_151": "E",
+   "BT_152": 0.0,
+   "BT_153": "Commode Louis-Philippe d'occasion"
+  }
+ ],
+ "notes": [
+  {
+   "BT_21": "PMD",
+   "BT_22": "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."
+  },
+  {
+   "BT_21": "PMT",
+   "BT_22": "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."
+  },
+  {
+   "BT_21": "AAB",
+   "BT_22": "Pas d'escompte pour paiement anticipé."
+  },
+  {
+   "BT_21": "BAR",
+   "BT_22": "B2B"
+  }
+ ],
+ "remises": [],
+ "tva": [
+  {
+   "BT_116": 1450.0,
+   "BT_117": 0.0,
+   "BT_118": "E",
+   "BT_119": 0.0,
+   "BT_120": "Régime particulier - Biens d'occasion (art. 297 A du CGI) : TVA sur la marge",
+   "BT_121": "VATEX-EU-F"
+  }
+ ]
+}

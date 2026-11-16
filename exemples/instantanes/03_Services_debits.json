@@ -1,0 +1,96 @@
+{
+ "charges": [],
+ "entete": {
+  "BT_1": "F202600030",
+  "BT_106": 3030.0,
+  "BT_109": 3030.0,
+  "BT_110": 606.0,
+  "BT_112": 3636.0,
+  "BT_113": 0.0,
+  "BT_115": 3636.0,
+  "BT_12": "CONTRAT-ORION-2026-04",
+  "BT_2": "2026-03-16",
+  "BT_20": "Paiement à 30 jours date de facture",
+  "BT_23": "S1",
+  "BT_24": "urn:cen.eu:en16931:2017",
+  "BT_27": "CONSEIL ORION SARL",
+  "BT_3": "380",
+  "BT_30": "310000013",
+  "BT_31": "FR38310000013",
+  "BT_33": "SARL au capital de 20 000 EUR",
+  "BT_34": "310000013",
+  "BT_35": "5 cours de l'Intendance",
+  "BT_37": "BORDEAUX",
+  "BT_38": "33000",
+  "BT_40": "FR",
+  "BT_41": "Paul Durand",
+  "BT_43": "facturation@conseil-orion.example",
+  "BT_44": "MAISON LUMEN SARL",
+  "BT_47": "200000008",
+  "BT_48": "FR37200000008",
+  "BT_49": "200000008",
+  "BT_5": "EUR",
+  "BT_50": "8 avenue du Port",
+  "BT_52": "MARSEILLE",
+  "BT_53": "13002",
+  "BT_55": "FR",
+  "BT_56_0": "Service comptabilité fournisseurs",
+  "BT_58": "fournisseurs@maison-lumen.example",
+  "BT_72": "2026-03-12",
+  "BT_81": "30",
+  "BT_82": "Virement",
+  "BT_84": "FR7699999000010001234567809",
+  "BT_86": "XBQAFRP0XXX",
+  "BT_9": "2026-04-15"
+ },
+ "lignes": [
+  {
+   "BT_126": "1",
+   "BT_129": 3.0,
+   "BT_130": "DAY",
+   "BT_131": 2550.0,
+   "BT_146": 850.0,
+   "BT_151": "S",
+   "BT_152": 20.0,
+   "BT_153": "Audit de l'organisation comptable"
+  },
+  {
+   "BT_126": "2",
+   "BT_129": 4.0,
+   "BT_130": "HUR",
+   "BT_131": 480.0,
+   "BT_146": 120.0,
+   "BT_151": "S",
+   "BT_152": 20.0,
+   "BT_153": "Restitution et recommandations"
+  }
+ ],
+ "notes": [
+  {
+   "BT_21": "PMD",
+   "BT_22": "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."
+  },
+  {
+   "BT_21": "PMT",
+   "BT_22": "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."
+  },
+  {
+   "BT_21": "AAB",
+   "BT_22": "Pas d'escompte pour paiement anticipé."
+  },
+  {
+   "BT_21": "BAR",
+   "BT_22": "B2B"
+  }
+ ],
+ "remises": [],
+ "tva": [
+  {
+   "BT_116": 3030.0,
+   "BT_117": 606.0,
+   "BT_118": "S",
+   "BT_119": 20.0,
+   "BT_8": "5"
+  }
+ ]
+}

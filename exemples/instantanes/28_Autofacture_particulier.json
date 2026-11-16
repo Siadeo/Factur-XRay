@@ -1,0 +1,79 @@
+{
+ "charges": [],
+ "entete": {
+  "BT_1": "AUTOF2026-0280",
+  "BT_106": 650.0,
+  "BT_109": 650.0,
+  "BT_110": 0.0,
+  "BT_112": 650.0,
+  "BT_113": 0.0,
+  "BT_115": 650.0,
+  "BT_2": "2026-03-16",
+  "BT_20": "Payé comptant à l'enlèvement",
+  "BT_23": "B1",
+  "BT_24": "urn:cen.eu:en16931:2017",
+  "BT_27": "Marc LEFEVRE",
+  "BT_3": "389",
+  "BT_35": "7 impasse des Lilas",
+  "BT_37": "NANTES",
+  "BT_38": "44000",
+  "BT_40": "FR",
+  "BT_44": "ATELIER BOREAL SAS",
+  "BT_47": "100000009",
+  "BT_49": "100000009",
+  "BT_5": "EUR",
+  "BT_50": "12 rue des Forges",
+  "BT_52": "LYON",
+  "BT_53": "69002",
+  "BT_55": "FR",
+  "BT_72": "2026-03-12",
+  "BT_81": "10",
+  "BT_82": "Espèces",
+  "BT_9": "2026-04-15"
+ },
+ "lignes": [
+  {
+   "BT_126": "1",
+   "BT_129": 1.0,
+   "BT_130": "C62",
+   "BT_131": 650.0,
+   "BT_146": 650.0,
+   "BT_151": "O",
+   "BT_152": null,
+   "BT_153": "Armoire normande ancienne en chêne"
+  }
+ ],
+ "notes": [
+  {
+   "BT_21": "PMD",
+   "BT_22": "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."
+  },
+  {
+   "BT_21": "PMT",
+   "BT_22": "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."
+  },
+  {
+   "BT_21": "AAB",
+   "BT_22": "Pas d'escompte pour paiement anticipé."
+  },
+  {
+   "BT_21": "BAR",
+   "BT_22": "OUTOFSCOPE"
+  },
+  {
+   "BT_21": "AAI",
+   "BT_22": "Bordereau d'achat établi par l'acheteur professionnel : vendeur particulier non assujetti à la TVA."
+  }
+ ],
+ "remises": [],
+ "tva": [
+  {
+   "BT_116": 650.0,
+   "BT_117": 0.0,
+   "BT_118": "O",
+   "BT_119": null,
+   "BT_120": "Vente par un particulier non assujetti",
+   "BT_121": "VATEX-EU-O"
+  }
+ ]
+}

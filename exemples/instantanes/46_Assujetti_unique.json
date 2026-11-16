@@ -1,0 +1,93 @@
+{
+ "charges": [],
+ "entete": {
+  "BT_1": "F202600460",
+  "BT_106": 7800.0,
+  "BT_109": 7800.0,
+  "BT_110": 1560.0,
+  "BT_112": 9360.0,
+  "BT_113": 0.0,
+  "BT_115": 9360.0,
+  "BT_2": "2026-03-16",
+  "BT_20": "Paiement à 30 jours date de facture",
+  "BT_23": "B1",
+  "BT_24": "urn:cen.eu:en16931:2017",
+  "BT_27": "BOREAL CUISINES SAS",
+  "BT_29d": "170000004",
+  "BT_29d_1": "0231",
+  "BT_3": "380",
+  "BT_30": "110000007",
+  "BT_33": "SAS au capital de 60 000 EUR",
+  "BT_34": "110000007",
+  "BT_35": "14 rue des Forges",
+  "BT_37": "LYON",
+  "BT_38": "69002",
+  "BT_40": "FR",
+  "BT_44": "MAISON LUMEN SARL",
+  "BT_47": "200000008",
+  "BT_48": "FR37200000008",
+  "BT_49": "200000008",
+  "BT_5": "EUR",
+  "BT_50": "8 avenue du Port",
+  "BT_52": "MARSEILLE",
+  "BT_53": "13002",
+  "BT_55": "FR",
+  "BT_56_0": "Service comptabilité fournisseurs",
+  "BT_58": "fournisseurs@maison-lumen.example",
+  "BT_62": "GROUPE BOREAL TVA (assujetti unique)",
+  "BT_63": "FR20170000004",
+  "BT_64": "12 rue des Forges",
+  "BT_66": "LYON",
+  "BT_67": "69002",
+  "BT_69": "FR",
+  "BT_72": "2026-03-12",
+  "BT_81": "30",
+  "BT_82": "Virement",
+  "BT_84": "FR7699999000010001234567809",
+  "BT_86": "XBQAFRP0XXX",
+  "BT_9": "2026-04-15"
+ },
+ "lignes": [
+  {
+   "BT_126": "1",
+   "BT_129": 1.0,
+   "BT_130": "C62",
+   "BT_131": 7800.0,
+   "BT_146": 7800.0,
+   "BT_151": "S",
+   "BT_152": 20.0,
+   "BT_153": "Cuisine équipée sur mesure"
+  }
+ ],
+ "notes": [
+  {
+   "BT_21": "PMD",
+   "BT_22": "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."
+  },
+  {
+   "BT_21": "PMT",
+   "BT_22": "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."
+  },
+  {
+   "BT_21": "AAB",
+   "BT_22": "Pas d'escompte pour paiement anticipé."
+  },
+  {
+   "BT_21": "BAR",
+   "BT_22": "B2B"
+  },
+  {
+   "BT_21": "TXD",
+   "BT_22": "MEMBRE_ASSUJETTI_UNIQUE"
+  }
+ ],
+ "remises": [],
+ "tva": [
+  {
+   "BT_116": 7800.0,
+   "BT_117": 1560.0,
+   "BT_118": "S",
+   "BT_119": 20.0
+  }
+ ]
+}

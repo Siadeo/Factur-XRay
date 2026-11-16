@@ -1,0 +1,37 @@
+# I. Structure de facture avancée. Données fictives.
+classeur: I_Structure_avancee
+cas:
+  49_Sous_lignes:
+    lignes:
+      - {BT_126: 1, EXT_FR_FE_163: GROUP, BT_155: KIT-SALON-01, BT_153: Kit salon de jardin, BT_129: 1, BT_146: 1240}
+      - {BT_126: 2, EXT_FR_FE_162: 1, EXT_FR_FE_163: DETAIL, BT_155: TAB-JAR-01, BT_153: Table de jardin en teck, BT_129: 1, BT_146: 640}
+      - {BT_126: 3, EXT_FR_FE_162: 1, EXT_FR_FE_163: DETAIL, BT_155: FAU-JAR-01, BT_153: Fauteuil de jardin en teck, BT_129: 4, BT_146: 150}
+      - {BT_126: 4, EXT_FR_FE_163: INFORMATION, BT_153: Housse de protection offerte, BT_129: 1}
+
+  50_Multi_vendeurs:
+    entete:
+      BT_27: NOVA MARKET SAS
+      BT_28: null
+      BT_33: SAS au capital de 500 000 EUR
+      BT_41: null
+      BT_42: null
+      BT_43: null
+      BT_30: "120000005"
+      BT_31: FR47120000005
+      BT_34: "120000005"
+      BT_35: 30 rue de la Bourse
+      BT_38: "69002"
+      BT_37: LYON
+    notes_plus:
+      - {BT_21: AAI, BT_22: "Facture multi-vendeurs : chaque ligne GROUP regroupe les ventes d'un vendeur, identifié sur la ligne et par son numéro de facture (AFL)."}
+    lignes:
+      - {BT_126: 1, EXT_FR_FE_163: GROUP, BT_153: Ventes ATELIER BOREAL SAS, BT_128: BOREAL-2026-0501, BT_128_1: AFL,
+         EXT_FR_FE_164: ATELIER BOREAL SAS, EXT_FR_FE_167: "100000009", EXT_FR_FE_177: FR, EXT_FR_FE_168: FR88100000009,
+         EXT_FR_FE_181: auto, EXT_FR_FE_184: auto}
+      - {BT_126: 2, EXT_FR_FE_162: 1, EXT_FR_FE_163: DETAIL, BT_155: TAB-CHE-180, BT_153: Table en chêne massif 180 cm, BT_129: 1,
+         BT_146: 890, BT_128: BOREAL-2026-0501, BT_128_1: AFL, EXT_FR_FE_167: "100000009"}
+      - {BT_126: 3, EXT_FR_FE_163: GROUP, BT_153: Ventes CONSEIL ORION SARL, BT_128: ORION-2026-0502, BT_128_1: AFL,
+         EXT_FR_FE_164: CONSEIL ORION SARL, EXT_FR_FE_167: "310000013", EXT_FR_FE_177: FR, EXT_FR_FE_168: FR38310000013,
+         EXT_FR_FE_181: auto, EXT_FR_FE_184: auto}
+      - {BT_126: 4, EXT_FR_FE_162: 3, EXT_FR_FE_163: DETAIL, BT_153: "Travaux d'aménagement intérieur (logement de plus de 2 ans)", BT_129: 3, BT_130: HUR,
+         BT_146: 110, BT_152: 10, BT_128: ORION-2026-0502, BT_128_1: AFL, EXT_FR_FE_167: "310000013"}

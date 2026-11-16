@@ -1,0 +1,122 @@
+{#- Facture CII (Factur-X EN16931 / EXTENDED), dans l'ordre du schéma CII D22B.
+    h : données d'en-tête, notes / lignes / tva / remises / charges : tableaux, toutes déjà mises en
+    forme (generation/formats.py) et absentes quand la cellule est vide. Les constantes (TypeCode VAT,
+    format="102", schemeID…) sont écrites ici : elles n'ont pas de cellule. -#}
+{%- macro el(tag, v, attrs='') -%}{% if v %}<{{ tag }}{{ attrs|safe }}>{{ v }}</{{ tag }}>{% endif %}{%- endmacro -%}
+{%- macro date(tag, v, q='udt') -%}{% if v %}<{{ tag }}><{{ q }}:DateTimeString format="102">{{ v }}</{{ q }}:DateTimeString></{{ tag }}>{% endif %}{%- endmacro -%}
+{%- macro adresse(cp, l1, l2, l3, ville, pays, subdiv=none) -%}
+{%- if cp or l1 or ville or pays -%}
+<ram:PostalTradeAddress>{{ el('ram:PostcodeCode', cp) }}{{ el('ram:LineOne', l1) }}{{ el('ram:LineTwo', l2) }}{{ el('ram:LineThree', l3) }}{{ el('ram:CityName', ville) }}{{ el('ram:CountryID', pays) }}{{ el('ram:CountrySubDivisionName', subdiv) }}</ram:PostalTradeAddress>
+{%- endif -%}
+{%- endmacro -%}
+{%- macro siren(v) -%}{% if v %}<ram:SpecifiedLegalOrganization><ram:ID schemeID="0002">{{ v }}</ram:ID></ram:SpecifiedLegalOrganization>{% endif %}{%- endmacro -%}
+{%- macro tva_id(v) -%}{% if v %}<ram:SpecifiedTaxRegistration><ram:ID schemeID="VA">{{ v }}</ram:ID></ram:SpecifiedTaxRegistration>{% endif %}{%- endmacro -%}
+{%- macro uri(v) -%}{% if v %}<ram:URIUniversalCommunication><ram:URIID schemeID="{{ 'EM' if '@' in v else '0225' }}">{{ v }}</ram:URIID></ram:URIUniversalCommunication>{% endif %}{%- endmacro -%}
+{%- macro tiers(tag, nom) -%}{% if nom %}<{{ tag }}><ram:Name>{{ nom }}</ram:Name></{{ tag }}>{% endif %}{%- endmacro -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<rsm:CrossIndustryInvoice xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:100" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100" xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<rsm:ExchangedDocumentContext>
+{%- if h.BT_23 %}<ram:BusinessProcessSpecifiedDocumentContextParameter><ram:ID>{{ h.BT_23 }}</ram:ID></ram:BusinessProcessSpecifiedDocumentContextParameter>{% endif %}
+<ram:GuidelineSpecifiedDocumentContextParameter><ram:ID>{{ guideline }}</ram:ID></ram:GuidelineSpecifiedDocumentContextParameter>
+</rsm:ExchangedDocumentContext>
+<rsm:ExchangedDocument>
+{{ el('ram:ID', h.BT_1) }}{{ el('ram:TypeCode', h.BT_3) }}{{ date('ram:IssueDateTime', h.BT_2) }}
+{%- for n in notes %}<ram:IncludedNote>{{ el('ram:Content', n.BT_22) }}{{ el('ram:SubjectCode', n.BT_21) }}</ram:IncludedNote>{% endfor %}
+</rsm:ExchangedDocument>
+<rsm:SupplyChainTradeTransaction>
+{%- for l in lignes %}
+<ram:IncludedSupplyChainTradeLineItem>
+<ram:AssociatedDocumentLineDocument>{{ el('ram:LineID', l.BT_126) }}{{ el('ram:ParentLineID', l.EXT_FR_FE_162) }}{{ el('ram:LineStatusReasonCode', l.EXT_FR_FE_163) }}
+{%- if l.BT_127 %}<ram:IncludedNote>{{ el('ram:Content', l.BT_127) }}{{ el('ram:SubjectCode', l.EXT_FR_FE_183) }}</ram:IncludedNote>{% endif -%}
+</ram:AssociatedDocumentLineDocument>
+<ram:SpecifiedTradeProduct>{{ el('ram:GlobalID', l.BT_157, ' schemeID="0160"') }}{{ el('ram:SellerAssignedID', l.BT_155) }}{{ el('ram:BuyerAssignedID', l.BT_156) }}{{ el('ram:Name', l.BT_153) }}{{ el('ram:Description', l.BT_154) }}
+{%- if l.BT_160 %}<ram:ApplicableProductCharacteristic>{{ el('ram:Description', l.BT_160) }}{{ el('ram:Value', l.BT_161) }}</ram:ApplicableProductCharacteristic>{% endif -%}
+{%- if l.BT_158 %}<ram:DesignatedProductClassification><ram:ClassCode listID="ZZZ">{{ l.BT_158 }}</ram:ClassCode></ram:DesignatedProductClassification>{% endif -%}
+{%- if l.BT_159 %}<ram:OriginTradeCountry><ram:ID>{{ l.BT_159 }}</ram:ID></ram:OriginTradeCountry>{% endif -%}
+</ram:SpecifiedTradeProduct>
+{%- set unite = ' unitCode="%s"' % l.BT_130 if l.BT_130 else '' -%}
+{%- if l.REF_COMMANDE_LIGNE or l.BT_132 or l.BT_146 or l.BT_148 or l.EXT_FR_FE_164 or l.EXT_FR_FE_167 %}
+<ram:SpecifiedLineTradeAgreement>
+{%- if l.REF_COMMANDE_LIGNE or l.BT_132 %}<ram:BuyerOrderReferencedDocument>{{ el('ram:IssuerAssignedID', l.REF_COMMANDE_LIGNE) }}{{ el('ram:LineID', l.BT_132) }}</ram:BuyerOrderReferencedDocument>{% endif -%}
+{%- if l.BT_148 %}<ram:GrossPriceProductTradePrice>{{ el('ram:ChargeAmount', l.BT_148) }}{{ el('ram:BasisQuantity', l.BT_149, unite) }}
+{%- if l.BT_147 %}<ram:AppliedTradeAllowanceCharge><ram:ChargeIndicator><udt:Indicator>false</udt:Indicator></ram:ChargeIndicator><ram:ActualAmount>{{ l.BT_147 }}</ram:ActualAmount></ram:AppliedTradeAllowanceCharge>{% endif -%}
+</ram:GrossPriceProductTradePrice>{% endif -%}
+{%- if l.BT_146 %}<ram:NetPriceProductTradePrice>{{ el('ram:ChargeAmount', l.BT_146) }}{{ el('ram:BasisQuantity', l.BT_149, unite) }}</ram:NetPriceProductTradePrice>{% endif -%}
+{%- if l.EXT_FR_FE_164 or l.EXT_FR_FE_167 %}<ram:ItemSellerTradeParty>{{ el('ram:GlobalID', l.EXT_FR_FE_166, ' schemeID="0088"') }}{{ el('ram:Name', l.EXT_FR_FE_164) }}{{ siren(l.EXT_FR_FE_167) }}
+{%- if l.EXT_FR_FE_177 %}<ram:PostalTradeAddress><ram:CountryID>{{ l.EXT_FR_FE_177 }}</ram:CountryID></ram:PostalTradeAddress>{% endif %}{{ tva_id(l.EXT_FR_FE_168) }}</ram:ItemSellerTradeParty>{% endif -%}
+</ram:SpecifiedLineTradeAgreement>
+{%- endif %}
+{%- if l.BT_129 or l.EXT_FR_FE_149 or l.EXT_FR_FE_151 or l.EXT_FR_FE_158 or l.REF_LIVRAISON_LIGNE %}
+<ram:SpecifiedLineTradeDelivery>{{ el('ram:BilledQuantity', l.BT_129, unite) }}
+{%- if l.EXT_FR_FE_149 or l.EXT_FR_FE_151 %}<ram:ShipToTradeParty>{{ el('ram:Name', l.EXT_FR_FE_149) }}{{ adresse(l.EXT_FR_FE_155, l.EXT_FR_FE_151, l.EXT_FR_FE_152, l.EXT_FR_FE_153, l.EXT_FR_FE_154, l.EXT_FR_FE_157, l.EXT_FR_FE_156) }}</ram:ShipToTradeParty>{% endif -%}
+{%- if l.EXT_FR_FE_158 %}<ram:ActualDeliverySupplyChainEvent>{{ date('ram:OccurrenceDateTime', l.EXT_FR_FE_158) }}</ram:ActualDeliverySupplyChainEvent>{% endif -%}
+{%- if l.REF_LIVRAISON_LIGNE %}<ram:DeliveryNoteReferencedDocument><ram:IssuerAssignedID>{{ l.REF_LIVRAISON_LIGNE }}</ram:IssuerAssignedID></ram:DeliveryNoteReferencedDocument>{% endif -%}
+</ram:SpecifiedLineTradeDelivery>
+{%- endif %}
+<ram:SpecifiedLineTradeSettlement>
+{%- if l.BT_151 %}<ram:ApplicableTradeTax><ram:TypeCode>VAT</ram:TypeCode>{{ el('ram:ExemptionReason', l.EXT_FR_FE_178) }}<ram:CategoryCode>{{ l.BT_151 }}</ram:CategoryCode>{{ el('ram:ExemptionReasonCode', l.EXT_FR_FE_179) }}{{ el('ram:DueDateTypeCode', l.EXT_FR_FE_180) }}{{ el('ram:RateApplicablePercent', l.BT_152) }}</ram:ApplicableTradeTax>{% endif -%}
+{%- if l.BT_134 or l.BT_135 %}<ram:BillingSpecifiedPeriod>{{ date('ram:StartDateTime', l.BT_134) }}{{ date('ram:EndDateTime', l.BT_135) }}</ram:BillingSpecifiedPeriod>{% endif -%}
+{%- if l.BT_136 %}<ram:SpecifiedTradeAllowanceCharge><ram:ChargeIndicator><udt:Indicator>false</udt:Indicator></ram:ChargeIndicator>{{ el('ram:CalculationPercent', l.BT_138) }}{{ el('ram:BasisAmount', l.BT_137) }}{{ el('ram:ActualAmount', l.BT_136) }}{{ el('ram:ReasonCode', l.BT_140) }}{{ el('ram:Reason', l.BT_139) }}</ram:SpecifiedTradeAllowanceCharge>{% endif -%}
+{%- if l.BT_141 %}<ram:SpecifiedTradeAllowanceCharge><ram:ChargeIndicator><udt:Indicator>true</udt:Indicator></ram:ChargeIndicator>{{ el('ram:ActualAmount', l.BT_141) }}{{ el('ram:Reason', l.BT_144) }}</ram:SpecifiedTradeAllowanceCharge>{% endif -%}
+<ram:SpecifiedTradeSettlementLineMonetarySummation>{{ el('ram:LineTotalAmount', l.BT_131) }}{{ el('ram:TaxTotalAmount', l.EXT_FR_FE_181, ' currencyID="%s"' % h.BT_5) }}{{ el('ram:GrandTotalAmount', l.EXT_FR_FE_184) }}</ram:SpecifiedTradeSettlementLineMonetarySummation>
+{%- if l.EXT_FR_FE_136 %}<ram:InvoiceReferencedDocument><ram:IssuerAssignedID>{{ l.EXT_FR_FE_136 }}</ram:IssuerAssignedID>{{ date('ram:FormattedIssueDateTime', l.EXT_FR_FE_138, 'qdt') }}</ram:InvoiceReferencedDocument>{% endif -%}
+{%- if l.BT_128 %}<ram:AdditionalReferencedDocument><ram:IssuerAssignedID>{{ l.BT_128 }}</ram:IssuerAssignedID><ram:TypeCode>130</ram:TypeCode>{{ el('ram:ReferenceTypeCode', l.BT_128_1) }}</ram:AdditionalReferencedDocument>{% endif -%}
+{%- if l.BT_133 %}<ram:ReceivableSpecifiedTradeAccountingAccount><ram:ID>{{ l.BT_133 }}</ram:ID></ram:ReceivableSpecifiedTradeAccountingAccount>{% endif -%}
+</ram:SpecifiedLineTradeSettlement>
+</ram:IncludedSupplyChainTradeLineItem>
+{%- endfor %}
+<ram:ApplicableHeaderTradeAgreement>
+{{ el('ram:BuyerReference', h.BT_10) }}
+<ram:SellerTradeParty>{{ el('ram:ID', h.BT_29) }}{{ el('ram:GlobalID', h.BT_29_0, ' schemeID="0088"') }}{{ el('ram:GlobalID', h.BT_29d, ' schemeID="%s"' % h.BT_29d_1 if h.BT_29d_1 else '') }}{{ el('ram:Name', h.BT_27) }}{{ el('ram:Description', h.BT_33) }}
+{%- if h.BT_30 or h.BT_28 %}<ram:SpecifiedLegalOrganization>{{ el('ram:ID', h.BT_30, ' schemeID="0002"') }}{{ el('ram:TradingBusinessName', h.BT_28) }}</ram:SpecifiedLegalOrganization>{% endif -%}
+{%- if h.BT_41 or h.BT_41_0 or h.BT_42 or h.BT_43 %}<ram:DefinedTradeContact>{{ el('ram:PersonName', h.BT_41) }}{{ el('ram:DepartmentName', h.BT_41_0) }}
+{%- if h.BT_42 %}<ram:TelephoneUniversalCommunication><ram:CompleteNumber>{{ h.BT_42 }}</ram:CompleteNumber></ram:TelephoneUniversalCommunication>{% endif -%}
+{%- if h.BT_43 %}<ram:EmailURIUniversalCommunication><ram:URIID>{{ h.BT_43 }}</ram:URIID></ram:EmailURIUniversalCommunication>{% endif %}</ram:DefinedTradeContact>{% endif -%}
+{{ adresse(h.BT_38, h.BT_35, h.BT_36, none, h.BT_37, h.BT_40) }}{{ uri(h.BT_34) }}{{ tva_id(h.BT_31) }}
+{%- if h.BT_32 %}<ram:SpecifiedTaxRegistration><ram:ID schemeID="FC">{{ h.BT_32 }}</ram:ID></ram:SpecifiedTaxRegistration>{% endif %}
+</ram:SellerTradeParty>
+<ram:BuyerTradeParty>{{ el('ram:GlobalID', h.BT_46_0, ' schemeID="0088"') }}{{ el('ram:Name', h.BT_44) }}{{ siren(h.BT_47) }}
+{%- if h.BT_56_0 or h.BT_57 or h.BT_58 %}<ram:DefinedTradeContact>{{ el('ram:DepartmentName', h.BT_56_0) }}
+{%- if h.BT_57 %}<ram:TelephoneUniversalCommunication><ram:CompleteNumber>{{ h.BT_57 }}</ram:CompleteNumber></ram:TelephoneUniversalCommunication>{% endif -%}
+{%- if h.BT_58 %}<ram:EmailURIUniversalCommunication><ram:URIID>{{ h.BT_58 }}</ram:URIID></ram:EmailURIUniversalCommunication>{% endif %}</ram:DefinedTradeContact>{% endif -%}
+{{ adresse(h.BT_53, h.BT_50, h.BT_51, h.BT_163, h.BT_52, h.BT_55) }}{{ uri(h.BT_49) }}{{ tva_id(h.BT_48) }}
+</ram:BuyerTradeParty>
+{{ tiers('ram:SalesAgentTradeParty', h.EXT_FR_FE_BG_03) }}
+{%- if h.BT_62 %}<ram:SellerTaxRepresentativeTradeParty><ram:Name>{{ h.BT_62 }}</ram:Name>{{ adresse(h.BT_67, h.BT_64, h.BT_65, none, h.BT_66, h.BT_69) }}{{ tva_id(h.BT_63) }}</ram:SellerTaxRepresentativeTradeParty>{% endif -%}
+{%- if h.BT_14 %}<ram:SellerOrderReferencedDocument><ram:IssuerAssignedID>{{ h.BT_14 }}</ram:IssuerAssignedID></ram:SellerOrderReferencedDocument>{% endif -%}
+{%- if h.BT_13 %}<ram:BuyerOrderReferencedDocument><ram:IssuerAssignedID>{{ h.BT_13 }}</ram:IssuerAssignedID></ram:BuyerOrderReferencedDocument>{% endif -%}
+{%- if h.BT_12 %}<ram:ContractReferencedDocument><ram:IssuerAssignedID>{{ h.BT_12 }}</ram:IssuerAssignedID></ram:ContractReferencedDocument>{% endif -%}
+{%- if h.BT_122 %}<ram:AdditionalReferencedDocument><ram:IssuerAssignedID>{{ h.BT_122 }}</ram:IssuerAssignedID>{{ el('ram:URIID', h.BT_124) }}<ram:TypeCode>916</ram:TypeCode>{{ el('ram:Name', h.BT_123) }}</ram:AdditionalReferencedDocument>{% endif -%}
+{%- if h.BT_17 %}<ram:AdditionalReferencedDocument><ram:IssuerAssignedID>{{ h.BT_17 }}</ram:IssuerAssignedID><ram:TypeCode>50</ram:TypeCode></ram:AdditionalReferencedDocument>{% endif -%}
+{%- if h.BT_18 %}<ram:AdditionalReferencedDocument><ram:IssuerAssignedID>{{ h.BT_18 }}</ram:IssuerAssignedID><ram:TypeCode>130</ram:TypeCode>{{ el('ram:ReferenceTypeCode', h.BT_18_1) }}</ram:AdditionalReferencedDocument>{% endif -%}
+{{ tiers('ram:BuyerAgentTradeParty', h.AGENT_ACHETEUR) }}
+{%- if h.BT_11 %}<ram:SpecifiedProcuringProject><ram:ID>{{ h.BT_11 }}</ram:ID><ram:Name>Project reference</ram:Name></ram:SpecifiedProcuringProject>{% endif %}
+</ram:ApplicableHeaderTradeAgreement>
+<ram:ApplicableHeaderTradeDelivery>
+{%- if h.BT_70 or h.BT_71 or h.BT_75 %}<ram:ShipToTradeParty>{{ el('ram:ID', h.BT_71) }}{{ el('ram:Name', h.BT_70) }}{{ adresse(h.BT_78, h.BT_75, h.BT_76, h.BT_165, h.BT_77, h.BT_80, h.BT_79) }}</ram:ShipToTradeParty>{% endif -%}
+{%- if h.BT_72 %}<ram:ActualDeliverySupplyChainEvent>{{ date('ram:OccurrenceDateTime', h.BT_72) }}</ram:ActualDeliverySupplyChainEvent>{% endif -%}
+{%- if h.BT_16 %}<ram:DespatchAdviceReferencedDocument><ram:IssuerAssignedID>{{ h.BT_16 }}</ram:IssuerAssignedID></ram:DespatchAdviceReferencedDocument>{% endif -%}
+{%- if h.BT_15 %}<ram:ReceivingAdviceReferencedDocument><ram:IssuerAssignedID>{{ h.BT_15 }}</ram:IssuerAssignedID></ram:ReceivingAdviceReferencedDocument>{% endif %}
+</ram:ApplicableHeaderTradeDelivery>
+<ram:ApplicableHeaderTradeSettlement>
+{{ el('ram:PaymentReference', h.BT_83) }}{% if h.BT_111 %}<ram:TaxCurrencyCode>EUR</ram:TaxCurrencyCode>{% endif %}<ram:InvoiceCurrencyCode>{{ h.BT_5 }}</ram:InvoiceCurrencyCode>
+{{- tiers('ram:InvoicerTradeParty', h.FACTURANT) }}{{ tiers('ram:InvoiceeTradeParty', h.FACTURE_A) }}
+{%- if h.BT_59 %}<ram:PayeeTradeParty>{{ el('ram:GlobalID', h.BT_60_0, ' schemeID="0088"') }}<ram:Name>{{ h.BT_59 }}</ram:Name>{{ siren(h.BT_61) }}</ram:PayeeTradeParty>{% endif -%}
+{{ tiers('ram:PayerTradeParty', h.EXT_FR_FE_BG_02) }}
+{%- if h.BT_81 %}<ram:SpecifiedTradeSettlementPaymentMeans><ram:TypeCode>{{ h.BT_81 }}</ram:TypeCode>{{ el('ram:Information', h.BT_82) }}
+{%- if h.BT_87 %}<ram:ApplicableTradeSettlementFinancialCard><ram:ID>{{ h.BT_87 }}</ram:ID>{{ el('ram:CardholderName', h.BT_88) }}</ram:ApplicableTradeSettlementFinancialCard>{% endif -%}
+{%- if h.BT_91 %}<ram:PayerPartyDebtorFinancialAccount><ram:IBANID>{{ h.BT_91 }}</ram:IBANID></ram:PayerPartyDebtorFinancialAccount>{% endif -%}
+{%- if h.BT_84 %}<ram:PayeePartyCreditorFinancialAccount><ram:IBANID>{{ h.BT_84 }}</ram:IBANID>{{ el('ram:AccountName', h.BT_85) }}</ram:PayeePartyCreditorFinancialAccount>{% endif -%}
+{%- if h.BT_86 %}<ram:PayeeSpecifiedCreditorFinancialInstitution><ram:BICID>{{ h.BT_86 }}</ram:BICID></ram:PayeeSpecifiedCreditorFinancialInstitution>{% endif -%}
+</ram:SpecifiedTradeSettlementPaymentMeans>{% endif -%}
+{%- for t in tva %}<ram:ApplicableTradeTax>{{ el('ram:CalculatedAmount', t.BT_117) }}<ram:TypeCode>VAT</ram:TypeCode>{{ el('ram:ExemptionReason', t.BT_120) }}{{ el('ram:BasisAmount', t.BT_116) }}{{ el('ram:CategoryCode', t.BT_118) }}{{ el('ram:ExemptionReasonCode', t.BT_121) }}{{ el('ram:DueDateTypeCode', t.BT_8) }}{{ el('ram:RateApplicablePercent', t.BT_119) }}</ram:ApplicableTradeTax>{% endfor -%}
+{%- if h.BT_73 or h.BT_74 %}<ram:BillingSpecifiedPeriod>{{ date('ram:StartDateTime', h.BT_73) }}{{ date('ram:EndDateTime', h.BT_74) }}</ram:BillingSpecifiedPeriod>{% endif -%}
+{%- for r in remises %}<ram:SpecifiedTradeAllowanceCharge><ram:ChargeIndicator><udt:Indicator>false</udt:Indicator></ram:ChargeIndicator>{{ el('ram:CalculationPercent', r.BT_94) }}{{ el('ram:BasisAmount', r.BT_93) }}{{ el('ram:ActualAmount', r.BT_92) }}{{ el('ram:ReasonCode', r.BT_98) }}{{ el('ram:Reason', r.BT_97) }}<ram:CategoryTradeTax><ram:TypeCode>VAT</ram:TypeCode>{{ el('ram:CategoryCode', r.BT_95) }}{{ el('ram:RateApplicablePercent', r.BT_96) }}</ram:CategoryTradeTax></ram:SpecifiedTradeAllowanceCharge>{% endfor -%}
+{%- for c in charges %}<ram:SpecifiedTradeAllowanceCharge><ram:ChargeIndicator><udt:Indicator>true</udt:Indicator></ram:ChargeIndicator>{{ el('ram:CalculationPercent', c.BT_101) }}{{ el('ram:BasisAmount', c.BT_100) }}{{ el('ram:ActualAmount', c.BT_99) }}{{ el('ram:ReasonCode', c.BT_105) }}{{ el('ram:Reason', c.BT_104) }}<ram:CategoryTradeTax><ram:TypeCode>VAT</ram:TypeCode>{{ el('ram:ExemptionReason', c.EXT_FR_FE_189) }}{{ el('ram:CategoryCode', c.BT_102) }}{{ el('ram:ExemptionReasonCode', c.EXT_FR_FE_190) }}{{ el('ram:RateApplicablePercent', c.BT_103) }}</ram:CategoryTradeTax></ram:SpecifiedTradeAllowanceCharge>{% endfor -%}
+{%- if h.BT_20 or h.BT_9 or h.BT_89 %}<ram:SpecifiedTradePaymentTerms>{{ el('ram:Description', h.BT_20) }}{{ date('ram:DueDateDateTime', h.BT_9) }}{{ el('ram:DirectDebitMandateID', h.BT_89) }}</ram:SpecifiedTradePaymentTerms>{% endif %}
+<ram:SpecifiedTradeSettlementHeaderMonetarySummation>{{ el('ram:LineTotalAmount', h.BT_106) }}{{ el('ram:ChargeTotalAmount', h.BT_108) }}{{ el('ram:AllowanceTotalAmount', h.BT_107) }}{{ el('ram:TaxBasisTotalAmount', h.BT_109) }}{{ el('ram:TaxTotalAmount', h.BT_110, ' currencyID="%s"' % h.BT_5) }}{{ el('ram:TaxTotalAmount', h.BT_111, ' currencyID="EUR"') }}{{ el('ram:RoundingAmount', h.BT_114) }}{{ el('ram:GrandTotalAmount', h.BT_112) }}{{ el('ram:TotalPrepaidAmount', h.BT_113) }}{{ el('ram:DuePayableAmount', h.BT_115) }}</ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+{%- if h.BT_25 %}<ram:InvoiceReferencedDocument><ram:IssuerAssignedID>{{ h.BT_25 }}</ram:IssuerAssignedID>{{ el('ram:TypeCode', h.EXT_FR_FE_02) }}{{ date('ram:FormattedIssueDateTime', h.BT_26, 'qdt') }}</ram:InvoiceReferencedDocument>{% endif -%}
+{%- if h.BT_19 %}<ram:ReceivableSpecifiedTradeAccountingAccount><ram:ID>{{ h.BT_19 }}</ram:ID></ram:ReceivableSpecifiedTradeAccountingAccount>{% endif %}
+</ram:ApplicableHeaderTradeSettlement>
+</rsm:SupplyChainTradeTransaction>
+</rsm:CrossIndustryInvoice>

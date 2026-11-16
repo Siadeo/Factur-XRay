@@ -1,0 +1,2100 @@
+# Généré par tools/exemples/extract_catalog.py : ne pas éditer à la main.
+- id: BT-23
+  cle: BT_23
+  libelle: Cadre de facturation
+  bloc: En-tête – contexte
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext/ram:BusinessProcessSpecifiedDocumentContextParameter/ram:ID
+- id: BT-24
+  cle: BT_24
+  libelle: Identifiant de spécification
+  bloc: En-tête – contexte
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext/ram:GuidelineSpecifiedDocumentContextParameter/ram:ID
+- id: BT-1
+  cle: BT_1
+  libelle: Numéro de facture
+  bloc: En-tête – document et notes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:ID
+- id: BT-3
+  cle: BT_3
+  libelle: Code du type de facture
+  bloc: En-tête – document et notes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:TypeCode
+- id: BT-2
+  cle: BT_2
+  libelle: Date d'émission
+  bloc: En-tête – document et notes
+  role: entete
+  type: date
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:IssueDateTime/udt:DateTimeString
+- id: BT-22
+  cle: BT_22
+  libelle: Note de facture
+  bloc: En-tête – document et notes
+  role: notes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:IncludedNote/ram:Content
+- id: BT-21
+  cle: BT_21
+  libelle: Code du sujet de la note
+  bloc: En-tête – document et notes
+  role: notes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:IncludedNote/ram:SubjectCode
+- id: BT-22o
+  cle: BT_22o
+  libelle: Note de facture (assujetti unique)
+  bloc: En-tête – document et notes
+  role: notes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:IncludedNote/ram:Content
+- id: BT-21o
+  cle: BT_21o
+  libelle: Code sujet de la note (TXD)
+  bloc: En-tête – document et notes
+  role: notes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:IncludedNote/ram:SubjectCode
+- id: BT-2-1
+  cle: BT_2_1
+  libelle: Format date
+  bloc: En-tête – document et notes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:ExchangedDocument/ram:IssueDateTime/udt:DateTimeString/@format
+  fixe: '102'
+- id: BT-29
+  cle: BT_29
+  libelle: Identifiant du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID
+- id: BT-29-0
+  cle: BT_29_0
+  libelle: Identifiant du vendeur (Global ID)
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID
+- id: BT-27
+  cle: BT_27
+  libelle: Nom du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:Name
+- id: BT-33
+  cle: BT_33
+  libelle: Informations juridiques complémentaires du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:Description
+- id: BT-30
+  cle: BT_30
+  libelle: Identifiant légal du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedLegalOrganization/ram:ID
+- id: BT-28
+  cle: BT_28
+  libelle: Nom commercial du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedLegalOrganization/ram:TradingBusinessName
+- id: BT-41-0
+  cle: BT_41_0
+  libelle: Point de contact vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:DepartmentName
+- id: BT-41
+  cle: BT_41
+  libelle: Contact chez le vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:PersonName
+- id: BT-42
+  cle: BT_42
+  libelle: Téléphone du contact vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:TelephoneUniversalCommunication/ram:CompleteNumber
+- id: BT-43
+  cle: BT_43
+  libelle: Courriel du contact vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:EmailURIUniversalCommunication/ram:URIID
+- id: BT-38
+  cle: BT_38
+  libelle: Code postal du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:PostalTradeAddress/ram:PostcodeCode
+- id: BT-35
+  cle: BT_35
+  libelle: Adresse du vendeur, ligne 1
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:PostalTradeAddress/ram:LineOne
+- id: BT-36
+  cle: BT_36
+  libelle: Adresse du vendeur, ligne 2
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:PostalTradeAddress/ram:LineTwo
+- id: BT-37
+  cle: BT_37
+  libelle: Ville du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:PostalTradeAddress/ram:CityName
+- id: BT-40
+  cle: BT_40
+  libelle: Code pays du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:PostalTradeAddress/ram:CountryID
+- id: BT-34
+  cle: BT_34
+  libelle: Adresse électronique du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:URIUniversalCommunication/ram:URIID
+- id: BT-31
+  cle: BT_31
+  libelle: Numéro de TVA du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID
+- id: BT-29d
+  cle: BT_29d
+  libelle: Identifiant du vendeur (Assujetti unique)
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID
+- id: BT-29d-1
+  cle: BT_29d_1
+  libelle: Identifiant du schéma (Assujetti unique)
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:GlobalID/@schemeID
+- id: BT-30-1
+  cle: BT_30_1
+  libelle: Identifiant du schéma
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedLegalOrganization/ram:ID/@schemeID
+  fixe: '0002'
+- id: BT-31-0
+  cle: BT_31_0
+  libelle: Qualifiant d'Identifiant à la TVA du Vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID/@schemeID
+  fixe: VA
+- id: BT-46-0
+  cle: BT_46_0
+  libelle: Identifiant de l'acheteur (GlobalID)
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:GlobalID
+- id: BT-44
+  cle: BT_44
+  libelle: Nom de l'acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:Name
+- id: BT-47
+  cle: BT_47
+  libelle: Identifiant légal de l'acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedLegalOrganization/ram:ID
+- id: BT-56-0
+  cle: BT_56_0
+  libelle: Service du contact acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:DefinedTradeContact/ram:DepartmentName
+- id: BT-57
+  cle: BT_57
+  libelle: Téléphone du contact acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:DefinedTradeContact/ram:TelephoneUniversalCommunication/ram:CompleteNumber
+- id: BT-58
+  cle: BT_58
+  libelle: Courriel du contact acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:DefinedTradeContact/ram:EmailURIUniversalCommunication/ram:URIID
+- id: BT-53
+  cle: BT_53
+  libelle: Code postal de l'acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:PostcodeCode
+- id: BT-50
+  cle: BT_50
+  libelle: Adresse de l'acheteur, ligne 1
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:LineOne
+- id: BT-51
+  cle: BT_51
+  libelle: Adresse de l'acheteur, ligne 2
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:LineTwo
+- id: BT-163
+  cle: BT_163
+  libelle: Adresse de l'acheteur, ligne 3
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:LineThree
+- id: BT-52
+  cle: BT_52
+  libelle: Ville de l'acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:CityName
+- id: BT-55
+  cle: BT_55
+  libelle: Code pays de l'acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:PostalTradeAddress/ram:CountryID
+- id: BT-49
+  cle: BT_49
+  libelle: Adresse électronique de l'acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:URIUniversalCommunication/ram:URIID
+- id: BT-48
+  cle: BT_48
+  libelle: Numéro de TVA de l'acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedTaxRegistration/ram:ID
+- id: BT-47-1
+  cle: BT_47_1
+  libelle: Identifiant du schéma
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedLegalOrganization/ram:ID/@schemeID
+  fixe: '0002'
+- id: BT-48-0
+  cle: BT_48_0
+  libelle: Qualifiant d'Identifiant fiscal de l'acheteur
+  bloc: Acheteur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedTaxRegistration/ram:ID/@schemeID
+  fixe: VA
+- id: BT-62
+  cle: BT_62
+  libelle: Nom du représentant fiscal
+  bloc: Représentant fiscal du vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTaxRepresentativeTradeParty/ram:Name
+- id: BT-67
+  cle: BT_67
+  libelle: Code postal du représentant fiscal
+  bloc: Représentant fiscal du vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTaxRepresentativeTradeParty/ram:PostalTradeAddress/ram:PostcodeCode
+- id: BT-64
+  cle: BT_64
+  libelle: Adresse du représentant fiscal, ligne 1
+  bloc: Représentant fiscal du vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTaxRepresentativeTradeParty/ram:PostalTradeAddress/ram:LineOne
+- id: BT-65
+  cle: BT_65
+  libelle: Adresse du représentant fiscal, ligne 2
+  bloc: Représentant fiscal du vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTaxRepresentativeTradeParty/ram:PostalTradeAddress/ram:LineTwo
+- id: BT-66
+  cle: BT_66
+  libelle: Ville du représentant fiscal
+  bloc: Représentant fiscal du vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTaxRepresentativeTradeParty/ram:PostalTradeAddress/ram:CityName
+- id: BT-69
+  cle: BT_69
+  libelle: Code pays du représentant fiscal
+  bloc: Représentant fiscal du vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTaxRepresentativeTradeParty/ram:PostalTradeAddress/ram:CountryID
+- id: BT-63
+  cle: BT_63
+  libelle: Numéro de TVA du représentant fiscal
+  bloc: Représentant fiscal du vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTaxRepresentativeTradeParty/ram:SpecifiedTaxRegistration/ram:ID
+- id: BT-63-0
+  cle: BT_63_0
+  libelle: Identifiant du schéma de l'identifiant TVA du représentant fiscal
+  bloc: Représentant fiscal du vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTaxRepresentativeTradeParty/ram:SpecifiedTaxRegistration/ram:ID/@schemeID
+  fixe: VA
+- id: EXT-FR-FE-BG-02
+  cle: EXT_FR_FE_BG_02
+  libelle: Payeur (tiers payeur) – nom
+  bloc: Tiers (agents, facturant, payeur)
+  role: entete
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:PayerTradeParty/ram:Name
+- id: EXT-FR-FE-BG-03
+  cle: EXT_FR_FE_BG_03
+  libelle: Agent du vendeur – nom
+  bloc: Tiers (agents, facturant, payeur)
+  role: entete
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SalesAgentTradeParty/ram:Name
+- id: Agent acheteur
+  cle: AGENT_ACHETEUR
+  libelle: Agent de l'acheteur – nom
+  bloc: Tiers (agents, facturant, payeur)
+  role: entete
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerAgentTradeParty/ram:Name
+- id: Facturant
+  cle: FACTURANT
+  libelle: Facturant / Invoicer – nom
+  bloc: Tiers (agents, facturant, payeur)
+  role: entete
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:InvoicerTradeParty/ram:Name
+- id: Facturé à
+  cle: FACTURE_A
+  libelle: Facturé à / Invoicee – nom
+  bloc: Tiers (agents, facturant, payeur)
+  role: entete
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:InvoiceeTradeParty/ram:Name
+- id: BT-10
+  cle: BT_10
+  libelle: Référence de l'acheteur
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerReference
+- id: BT-14
+  cle: BT_14
+  libelle: Référence de la commande client (vendeur)
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerOrderReferencedDocument/ram:IssuerAssignedID
+- id: BT-13
+  cle: BT_13
+  libelle: Référence du bon de commande
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerOrderReferencedDocument/ram:IssuerAssignedID
+- id: BT-12
+  cle: BT_12
+  libelle: Référence du contrat
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ContractReferencedDocument/ram:IssuerAssignedID
+- id: BT-122
+  cle: BT_122
+  libelle: Référence de la pièce justificative
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='916']/ram:IssuerAssignedID
+- id: BT-124
+  cle: BT_124
+  libelle: Adresse de la pièce justificative externe
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='916']/ram:URIID
+- id: BT-122-0
+  cle: BT_122_0
+  libelle: Code type (916)
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='916']/ram:TypeCode
+  fixe: '916'
+- id: BT-123
+  cle: BT_123
+  libelle: Description de la pièce justificative
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='916']/ram:Name
+- id: BT-17
+  cle: BT_17
+  libelle: Référence du marché ou du lot
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='50']/ram:IssuerAssignedID
+- id: BT-17-0
+  cle: BT_17_0
+  libelle: Code type (50)
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='50']/ram:TypeCode
+  fixe: '50'
+- id: BT-18
+  cle: BT_18
+  libelle: Identifiant de l'objet facturé
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='130']/ram:IssuerAssignedID
+- id: BT-18-0
+  cle: BT_18_0
+  libelle: Code type (130)
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='130']/ram:TypeCode
+  fixe: '130'
+- id: BT-18-1
+  cle: BT_18_1
+  libelle: Identifiant du schéma
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument[ram:TypeCode='130']/ram:ReferenceTypeCode
+- id: BT-11
+  cle: BT_11
+  libelle: Référence du projet
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SpecifiedProcuringProject/ram:ID
+- id: BT-11-0
+  cle: BT_11_0
+  libelle: Code type projet (valeur "Project reference")
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SpecifiedProcuringProject/ram:Name
+  fixe: Project reference
+- id: BT-19
+  cle: BT_19
+  libelle: Référence comptable de l'acheteur
+  bloc: Références et pièces jointes
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ReceivableSpecifiedTradeAccountingAccount/ram:ID
+- id: BT-71
+  cle: BT_71
+  libelle: Identifiant du lieu de livraison
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:ID
+- id: BT-70
+  cle: BT_70
+  libelle: Nom du destinataire de la livraison
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:Name
+- id: BT-78
+  cle: BT_78
+  libelle: Code postal de livraison
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:PostcodeCode
+- id: BT-75
+  cle: BT_75
+  libelle: Adresse de livraison, ligne 1
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:LineOne
+- id: BT-76
+  cle: BT_76
+  libelle: Adresse de livraison, ligne 2
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:LineTwo
+- id: BT-77
+  cle: BT_77
+  libelle: Ville de livraison
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:CityName
+- id: BT-80
+  cle: BT_80
+  libelle: Code pays de livraison
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:CountryID
+- id: BT-72
+  cle: BT_72
+  libelle: Date de livraison effective
+  bloc: Livraison
+  role: entete
+  type: date
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ActualDeliverySupplyChainEvent/ram:OccurrenceDateTime/udt:DateTimeString
+- id: BT-16
+  cle: BT_16
+  libelle: Référence de l'avis d'expédition
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:DespatchAdviceReferencedDocument/ram:IssuerAssignedID
+- id: BT-15
+  cle: BT_15
+  libelle: Référence de l'avis de réception
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ReceivingAdviceReferencedDocument/ram:IssuerAssignedID
+- id: BT-72-1
+  cle: BT_72_1
+  libelle: Format date
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ActualDeliverySupplyChainEvent/ram:OccurrenceDateTime/udt:DateTimeString/@format
+  fixe: '102'
+- id: BT-165
+  cle: BT_165
+  libelle: Adresse de livraison, ligne 3
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:LineThree
+- id: BT-79
+  cle: BT_79
+  libelle: Subdivision du pays de livraison
+  bloc: Livraison
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:CountrySubDivisionName
+- id: BT-25
+  cle: BT_25
+  libelle: Numéro de la facture antérieure
+  bloc: Facture antérieure
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:InvoiceReferencedDocument/ram:IssuerAssignedID
+- id: BT-26
+  cle: BT_26
+  libelle: Date de la facture antérieure
+  bloc: Facture antérieure
+  role: entete
+  type: date
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:InvoiceReferencedDocument/ram:FormattedIssueDateTime/qdt:DateTimeString
+- id: BT-26-1
+  cle: BT_26_1
+  libelle: Format date
+  bloc: Facture antérieure
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:InvoiceReferencedDocument/ram:FormattedIssueDateTime/qdt:DateTimeString/@format
+  fixe: '102'
+- id: EXT-FR-FE-02
+  cle: EXT_FR_FE_02
+  libelle: Type de la facture antérieure
+  bloc: Facture antérieure
+  role: entete
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:InvoiceReferencedDocument/ram:TypeCode
+- id: BT-83
+  cle: BT_83
+  libelle: Référence de paiement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:PaymentReference
+- id: BT-5
+  cle: BT_5
+  libelle: Devise de la facture
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:InvoiceCurrencyCode
+- id: BT-60-0
+  cle: BT_60_0
+  libelle: Identifiant du bénéficiaire
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:PayeeTradeParty/ram:GlobalID
+- id: BT-59
+  cle: BT_59
+  libelle: Nom du bénéficiaire du paiement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:PayeeTradeParty/ram:Name
+- id: BT-61
+  cle: BT_61
+  libelle: Identifiant légal du bénéficiaire du paiement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:PayeeTradeParty/ram:SpecifiedLegalOrganization/ram:ID
+- id: BT-81
+  cle: BT_81
+  libelle: Code du moyen de paiement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:TypeCode
+- id: BT-82
+  cle: BT_82
+  libelle: Libellé du moyen de paiement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:Information
+- id: BT-87
+  cle: BT_87
+  libelle: Numéro de carte (partiel)
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:ApplicableTradeSettlementFinancialCard/ram:ID
+- id: BT-88
+  cle: BT_88
+  libelle: Titulaire de la carte
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:ApplicableTradeSettlementFinancialCard/ram:CardholderName
+- id: BT-91
+  cle: BT_91
+  libelle: Compte débité
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayerPartyDebtorFinancialAccount/ram:IBANID
+- id: BT-84
+  cle: BT_84
+  libelle: Identifiant du compte de paiement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayeePartyCreditorFinancialAccount/ram:IBANID
+- id: BT-85
+  cle: BT_85
+  libelle: Nom du compte de paiement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayeePartyCreditorFinancialAccount/ram:AccountName
+- id: BT-86
+  cle: BT_86
+  libelle: Identifiant du prestataire de paiement (BIC)
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayeeSpecifiedCreditorFinancialInstitution/ram:BICID
+- id: BT-20
+  cle: BT_20
+  libelle: Conditions de paiement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:Description
+- id: BT-9
+  cle: BT_9
+  libelle: Date d'échéance
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: date
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:DueDateDateTime/udt:DateTimeString
+- id: BT-89
+  cle: BT_89
+  libelle: Référence du mandat de prélèvement
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:DirectDebitMandateID
+- id: BT-9-1
+  cle: BT_9_1
+  libelle: Format date
+  bloc: Bénéficiaire et paiement
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:DueDateDateTime/udt:DateTimeString/@format
+  fixe: '102'
+- id: BT-73
+  cle: BT_73
+  libelle: Début de la période de facturation
+  bloc: Période de facturation
+  role: entete
+  type: date
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:BillingSpecifiedPeriod/ram:StartDateTime/udt:DateTimeString
+- id: BT-74
+  cle: BT_74
+  libelle: Fin de la période de facturation
+  bloc: Période de facturation
+  role: entete
+  type: date
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:BillingSpecifiedPeriod/ram:EndDateTime/udt:DateTimeString
+- id: BT-73-1
+  cle: BT_73_1
+  libelle: Format date
+  bloc: Période de facturation
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:BillingSpecifiedPeriod/ram:StartDateTime/udt:DateTimeString/@format
+  fixe: '102'
+- id: BT-74-1
+  cle: BT_74_1
+  libelle: Format date
+  bloc: Période de facturation
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:BillingSpecifiedPeriod/ram:EndDateTime/udt:DateTimeString/@format
+  fixe: '102'
+- id: BG-20-1
+  cle: BG_20_1
+  libelle: Code Remise Document (false)
+  bloc: Remises et charges du document
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ChargeIndicator/udt:Indicator
+  fixe: 'false'
+- id: BT-94
+  cle: BT_94
+  libelle: Pourcentage de la remise sur le document
+  bloc: Remises et charges du document
+  role: remises
+  type: taux
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CalculationPercent
+- id: BT-93
+  cle: BT_93
+  libelle: Assiette de la remise sur le document
+  bloc: Remises et charges du document
+  role: remises
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:BasisAmount
+- id: BT-92
+  cle: BT_92
+  libelle: Montant de la remise sur le document
+  bloc: Remises et charges du document
+  role: remises
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ActualAmount
+- id: BT-98
+  cle: BT_98
+  libelle: Code du motif de la remise sur le document
+  bloc: Remises et charges du document
+  role: remises
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ReasonCode
+- id: BT-97
+  cle: BT_97
+  libelle: Motif de la remise sur le document
+  bloc: Remises et charges du document
+  role: remises
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:Reason
+- id: BT-95-0
+  cle: BT_95_0
+  libelle: Code type Taxe (VAT)
+  bloc: Remises et charges du document
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CategoryTradeTax/ram:TypeCode
+  fixe: VAT
+- id: BT-95
+  cle: BT_95
+  libelle: Catégorie de TVA de la remise sur le document
+  bloc: Remises et charges du document
+  role: remises
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CategoryTradeTax/ram:CategoryCode
+- id: BT-96
+  cle: BT_96
+  libelle: Taux de TVA de la remise sur le document
+  bloc: Remises et charges du document
+  role: remises
+  type: taux
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CategoryTradeTax/ram:RateApplicablePercent
+- id: BG-21-1
+  cle: BG_21_1
+  libelle: Code Charges Document (true)
+  bloc: Remises et charges du document
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ChargeIndicator/udt:Indicator
+  fixe: 'true'
+- id: BT-101
+  cle: BT_101
+  libelle: Pourcentage des frais sur le document
+  bloc: Remises et charges du document
+  role: charges
+  type: taux
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CalculationPercent
+- id: BT-100
+  cle: BT_100
+  libelle: Assiette des frais sur le document
+  bloc: Remises et charges du document
+  role: charges
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:BasisAmount
+- id: BT-99
+  cle: BT_99
+  libelle: Montant des frais sur le document
+  bloc: Remises et charges du document
+  role: charges
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ActualAmount
+- id: BT-105
+  cle: BT_105
+  libelle: Code du motif des frais sur le document
+  bloc: Remises et charges du document
+  role: charges
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ReasonCode
+- id: BT-104
+  cle: BT_104
+  libelle: Motif des frais sur le document
+  bloc: Remises et charges du document
+  role: charges
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:Reason
+- id: BT-102-0
+  cle: BT_102_0
+  libelle: Code type Taxe (VAT)
+  bloc: Remises et charges du document
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CategoryTradeTax/ram:TypeCode
+  fixe: VAT
+- id: EXT-FR-FE-189
+  cle: EXT_FR_FE_189
+  libelle: Motif d'exonération de la TVA des charges ou frais au niveau du document
+  bloc: Remises et charges du document
+  role: charges
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CategoryTradeTax/ram:ExemptionReason
+- id: BT-102
+  cle: BT_102
+  libelle: Catégorie de TVA des frais sur le document
+  bloc: Remises et charges du document
+  role: charges
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CategoryTradeTax/ram:CategoryCode
+- id: EXT-FR-FE-190
+  cle: EXT_FR_FE_190
+  libelle: Code Motif d'exonération de la TVA des charges ou frais au niveau du document
+  bloc: Remises et charges du document
+  role: charges
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CategoryTradeTax/ram:ExemptionReasonCode
+- id: BT-103
+  cle: BT_103
+  libelle: Taux de TVA des frais sur le document
+  bloc: Remises et charges du document
+  role: charges
+  type: taux
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CategoryTradeTax/ram:RateApplicablePercent
+- id: BT-117
+  cle: BT_117
+  libelle: Montant de TVA de la catégorie
+  bloc: Ventilation de la TVA
+  role: tva
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ApplicableTradeTax/ram:CalculatedAmount
+- id: BT-118-0
+  cle: BT_118_0
+  libelle: Code type de taxe (VAT)
+  bloc: Ventilation de la TVA
+  role: tva
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ApplicableTradeTax/ram:TypeCode
+  fixe: VAT
+- id: BT-120
+  cle: BT_120
+  libelle: Motif d'exonération de TVA (texte)
+  bloc: Ventilation de la TVA
+  role: tva
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ApplicableTradeTax/ram:ExemptionReason
+- id: BT-116
+  cle: BT_116
+  libelle: Base HT de la catégorie de TVA
+  bloc: Ventilation de la TVA
+  role: tva
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ApplicableTradeTax/ram:BasisAmount
+- id: BT-118
+  cle: BT_118
+  libelle: Code de catégorie de TVA
+  bloc: Ventilation de la TVA
+  role: tva
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ApplicableTradeTax/ram:CategoryCode
+- id: BT-121
+  cle: BT_121
+  libelle: Code du motif d'exonération de TVA
+  bloc: Ventilation de la TVA
+  role: tva
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ApplicableTradeTax/ram:ExemptionReasonCode
+- id: BT-8
+  cle: BT_8
+  libelle: Code d'exigibilité de la TVA
+  bloc: Ventilation de la TVA
+  role: tva
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ApplicableTradeTax/ram:DueDateTypeCode
+- id: BT-119
+  cle: BT_119
+  libelle: Taux de la catégorie de TVA
+  bloc: Ventilation de la TVA
+  role: tva
+  type: taux
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:ApplicableTradeTax/ram:RateApplicablePercent
+- id: BT-106
+  cle: BT_106
+  libelle: Total des montants nets de ligne
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:LineTotalAmount
+- id: BT-108
+  cle: BT_108
+  libelle: Total des frais sur le document
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:ChargeTotalAmount
+- id: BT-107
+  cle: BT_107
+  libelle: Total des remises sur le document
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:AllowanceTotalAmount
+- id: BT-109
+  cle: BT_109
+  libelle: Total HT de la facture
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxBasisTotalAmount
+- id: BT-110
+  cle: BT_110
+  libelle: Total de TVA de la facture
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxTotalAmount
+- id: BT-114
+  cle: BT_114
+  libelle: Arrondi
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:RoundingAmount
+- id: BT-112
+  cle: BT_112
+  libelle: Total TTC de la facture
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:GrandTotalAmount
+- id: BT-113
+  cle: BT_113
+  libelle: Montant déjà payé
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TotalPrepaidAmount
+- id: BT-115
+  cle: BT_115
+  libelle: Net à payer
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:DuePayableAmount
+- id: BT-110-1
+  cle: BT_110_1
+  libelle: Code devise
+  bloc: Totaux
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxTotalAmount/@currencyID
+  fixe: devise de la facture (BT-5)
+- id: BT-111
+  cle: BT_111
+  libelle: Total de TVA en devise de déclaration
+  bloc: Totaux
+  role: entete
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxTotalAmount
+- id: BT-111-1
+  cle: BT_111_1
+  libelle: Code devise
+  bloc: Totaux
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:TaxTotalAmount/@currencyID
+  fixe: EUR
+- id: BT-126
+  cle: BT_126
+  libelle: Identifiant de ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:AssociatedDocumentLineDocument/ram:LineID
+- id: EXT-FR-FE-162
+  cle: EXT_FR_FE_162
+  libelle: Identifiant de ligne Parent
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:AssociatedDocumentLineDocument/ram:ParentLineID
+- id: EXT-FR-FE-163
+  cle: EXT_FR_FE_163
+  libelle: Sous-type de ligne de facture
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:AssociatedDocumentLineDocument/ram:LineStatusReasonCode
+- id: BT-127
+  cle: BT_127
+  libelle: Note de ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:AssociatedDocumentLineDocument/ram:IncludedNote/ram:Content
+- id: EXT-FR-FE-183
+  cle: EXT_FR_FE_183
+  libelle: Sujet de Note de ligne de facture
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:AssociatedDocumentLineDocument/ram:IncludedNote/ram:SubjectCode
+- id: BT-157
+  cle: BT_157
+  libelle: Identifiant normalisé de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:GlobalID
+- id: BT-155
+  cle: BT_155
+  libelle: Référence vendeur de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:SellerAssignedID
+- id: BT-156
+  cle: BT_156
+  libelle: Référence acheteur de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:BuyerAssignedID
+- id: BT-153
+  cle: BT_153
+  libelle: Nom de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:Name
+- id: EXT-FR-FE-166
+  cle: EXT_FR_FE_166
+  libelle: Identifiant du vendeur à la ligne (Global ID)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:ItemSellerTradeParty/ram:GlobalID
+- id: EXT-FR-FE-164
+  cle: EXT_FR_FE_164
+  libelle: Raison sociale du vendeur à la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:ItemSellerTradeParty/ram:Name
+- id: EXT-FR-FE-167
+  cle: EXT_FR_FE_167
+  libelle: Identifiant d’enregistrement légal du vendeur à la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:ItemSellerTradeParty/ram:SpecifiedLegalOrganization/ram:ID
+- id: EXT-FR-FE-177
+  cle: EXT_FR_FE_177
+  libelle: Code de pays du vendeur à la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:ItemSellerTradeParty/ram:PostalTradeAddress/ram:CountryID
+- id: EXT-FR-FE-168
+  cle: EXT_FR_FE_168
+  libelle: Identifiant à la TVA du vendeur à la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:ItemSellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID
+- id: BT-154
+  cle: BT_154
+  libelle: Description de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:Description
+- id: BT-160
+  cle: BT_160
+  libelle: Nom de l'attribut d'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:ApplicableProductCharacteristic/ram:Description
+- id: BT-161
+  cle: BT_161
+  libelle: Valeur de l'attribut d'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:ApplicableProductCharacteristic/ram:Value
+- id: BT-158
+  cle: BT_158
+  libelle: Code de classification de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:DesignatedProductClassification/ram:ClassCode
+- id: BT-159
+  cle: BT_159
+  libelle: Pays d'origine de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedTradeProduct/ram:OriginTradeCountry/ram:ID
+- id: BT-132
+  cle: BT_132
+  libelle: Ligne de commande référencée
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:BuyerOrderReferencedDocument/ram:LineID
+- id: BT-148
+  cle: BT_148
+  libelle: Prix brut unitaire de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: prix
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:ChargeAmount
+- id: BT-149
+  cle: BT_149
+  libelle: Quantité de base du prix
+  bloc: Lignes de facture
+  role: lignes
+  type: quantite
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:BasisQuantity
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:BasisQuantity
+- id: BT-147-02
+  cle: BT_147_02
+  libelle: Indicateur de remise pour rabais (false)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:AppliedTradeAllowanceCharge/ram:ChargeIndicator/udt:Indicator
+  fixe: 'false'
+- id: BT-147
+  cle: BT_147
+  libelle: Rabais sur le prix de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: prix
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:AppliedTradeAllowanceCharge/ram:ActualAmount
+- id: BT-146
+  cle: BT_146
+  libelle: Prix net unitaire de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: prix
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:ChargeAmount
+- id: BT-129
+  cle: BT_129
+  libelle: Quantité facturée
+  bloc: Lignes de facture
+  role: lignes
+  type: quantite
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:BilledQuantity
+- id: BT-151-0
+  cle: BT_151_0
+  libelle: Type Taxe en code
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ApplicableTradeTax/ram:TypeCode
+  fixe: VAT
+- id: EXT-FR-FE-178
+  cle: EXT_FR_FE_178
+  libelle: Raison d'exemption de TVA en ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ApplicableTradeTax/ram:ExemptionReason
+- id: BT-151
+  cle: BT_151
+  libelle: Catégorie de TVA de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ApplicableTradeTax/ram:CategoryCode
+- id: EXT-FR-FE-180
+  cle: EXT_FR_FE_180
+  libelle: Date d'exigibilité de la taxe sur la valeur ajoutée en code à la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ApplicableTradeTax/ram:DueDateTypeCode
+- id: EXT-FR-FE-179
+  cle: EXT_FR_FE_179
+  libelle: Code de raison d'exemption de TVA en ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ApplicableTradeTax/ram:ExemptionReasonCode
+- id: BT-152
+  cle: BT_152
+  libelle: Taux de TVA de l'article
+  bloc: Lignes de facture
+  role: lignes
+  type: taux
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ApplicableTradeTax/ram:RateApplicablePercent
+- id: BT-134
+  cle: BT_134
+  libelle: Début de la période de la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: date
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:BillingSpecifiedPeriod/ram:StartDateTime/udt:DateTimeString
+- id: BT-135
+  cle: BT_135
+  libelle: Fin de la période de la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: date
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:BillingSpecifiedPeriod/ram:EndDateTime/udt:DateTimeString
+- id: BG-27-1
+  cle: BG_27_1
+  libelle: Indicateur de remise
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ChargeIndicator/udt:Indicator
+  fixe: 'false'
+- id: BT-138
+  cle: BT_138
+  libelle: Pourcentage de la remise sur la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: taux
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:CalculationPercent
+- id: BT-137
+  cle: BT_137
+  libelle: Assiette de la remise sur la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:BasisAmount
+- id: BT-136
+  cle: BT_136
+  libelle: Montant de la remise sur la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ActualAmount
+- id: BT-140
+  cle: BT_140
+  libelle: Code du motif de la remise sur la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ReasonCode
+- id: BT-139
+  cle: BT_139
+  libelle: Motif de la remise sur la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:Reason
+- id: BG-28-1
+  cle: BG_28_1
+  libelle: Indicateur de charge
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ChargeIndicator/udt:Indicator
+  fixe: 'true'
+- id: BT-141
+  cle: BT_141
+  libelle: Montant des frais sur la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:ActualAmount
+- id: BT-144
+  cle: BT_144
+  libelle: Motif des frais sur la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeAllowanceCharge/ram:Reason
+- id: BT-131
+  cle: BT_131
+  libelle: Montant net de la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: montant
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeSettlementLineMonetarySummation/ram:LineTotalAmount
+- id: EXT-FR-FE-181
+  cle: EXT_FR_FE_181
+  libelle: Montant TVA de la ligne de facture dans la devise de la facture
+  bloc: Lignes de facture
+  role: lignes
+  type: montant
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeSettlementLineMonetarySummation/ram:TaxTotalAmount
+- id: EXT-FR-FE-184
+  cle: EXT_FR_FE_184
+  libelle: Montant total avec TVA de la ligne de facture
+  bloc: Lignes de facture
+  role: lignes
+  type: montant
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:SpecifiedTradeSettlementLineMonetarySummation/ram:GrandTotalAmount
+- id: BT-128
+  cle: BT_128
+  libelle: Identifiant de l'objet facturé à la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument[ram:TypeCode='130']/ram:IssuerAssignedID
+- id: BT-128-0
+  cle: BT_128_0
+  libelle: Code type fixe (130)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument[ram:TypeCode='130']/ram:TypeCode
+  fixe: '130'
+- id: BT-128-1
+  cle: BT_128_1
+  libelle: Identifiant du schéma
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument[ram:TypeCode='130']/ram:ReferenceTypeCode
+- id: BT-133
+  cle: BT_133
+  libelle: Référence comptable de l'acheteur (ligne)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:ReceivableSpecifiedTradeAccountingAccount/ram:ID
+- id: BT-127-00
+  cle: BT_127_00
+  libelle: Note de ligne de facture
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:AssociatedDocumentLineDocument/ram:IncludedNote
+  fixe: ''
+- id: BT-130
+  cle: BT_130
+  libelle: Unité de la quantité facturée
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:BilledQuantity/@unitCode
+- id: EXT-FR-FE-BG-06
+  cle: EXT_FR_FE_BG_06
+  libelle: REFERENCE A FACTURE ANTERIEURE EN LIGNE (permet de gérer les reprises en ligne, notamment sur factures d'acompte)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:InvoiceReferencedDocument
+  fixe: ''
+- id: EXT-FR-FE-136
+  cle: EXT_FR_FE_136
+  libelle: ID de la facture antérieure
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:InvoiceReferencedDocument/ram:IssuerAssignedID
+- id: EXT-FR-FE-138
+  cle: EXT_FR_FE_138
+  libelle: Date de facture antérieure
+  bloc: Lignes de facture
+  role: lignes
+  type: date
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:InvoiceReferencedDocument/ram:FormattedIssueDateTime/qdt:DateTimeString
+- id: EXT-FR-FE-138-1
+  cle: EXT_FR_FE_138_1
+  libelle: Format date
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:InvoiceReferencedDocument/ram:FormattedIssueDateTime/qdt:DateTimeString/@format
+  fixe: '102'
+- id: EXT-FR-FE-BG-10
+  cle: EXT_FR_FE_BG_10
+  libelle: Détail de l'adresse de livraison à la ligne (Gestion du multi livraison)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty
+  fixe: ''
+- id: EXT-FR-FE-149
+  cle: EXT_FR_FE_149
+  libelle: Nom du lieu de livraison
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:Name
+- id: EXT-FR-FE-150
+  cle: EXT_FR_FE_150
+  libelle: ADRESSE POSTALE DE LIVRAISON A LA LIGNE
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress
+  fixe: ''
+- id: EXT-FR-FE-151
+  cle: EXT_FR_FE_151
+  libelle: Ligne Adresse 1 (si différent entête)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:LineOne
+- id: EXT-FR-FE-152
+  cle: EXT_FR_FE_152
+  libelle: Ligne adresse 2 (si différent entête)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:LineTwo
+- id: EXT-FR-FE-153
+  cle: EXT_FR_FE_153
+  libelle: Ligne Adresse 3 (si différent entête)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:LineThree
+- id: EXT-FR-FE-154
+  cle: EXT_FR_FE_154
+  libelle: Ville de livraison (si différent entête)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:CityName
+- id: EXT-FR-FE-155
+  cle: EXT_FR_FE_155
+  libelle: Code Postal de livraison (si différent entête)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:PostcodeCode
+- id: EXT-FR-FE-156
+  cle: EXT_FR_FE_156
+  libelle: Subdivision Pays (si différent entête)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:CountrySubDivisionName
+- id: EXT-FR-FE-157
+  cle: EXT_FR_FE_157
+  libelle: Code Pays (si différent entête)
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ShipToTradeParty/ram:PostalTradeAddress/ram:CountryID
+- id: EXT-FR-FE-BG-11
+  cle: EXT_FR_FE_BG_11
+  libelle: Détail sur la livraison réelle
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ActualDeliverySupplyChainEvent
+  fixe: ''
+- id: EXT-FR-FE-158-0
+  cle: EXT_FR_FE_158_0
+  libelle: Date de livraison à la ligne
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ActualDeliverySupplyChainEvent/ram:OccurrenceDateTime
+  fixe: ''
+- id: EXT-FR-FE-158
+  cle: EXT_FR_FE_158
+  libelle: Date de livraison à la ligne valeur
+  bloc: Lignes de facture
+  role: lignes
+  type: date
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ActualDeliverySupplyChainEvent/ram:OccurrenceDateTime/udt:DateTimeString
+- id: EXT-FR-FE-158-1
+  cle: EXT_FR_FE_158_1
+  libelle: Format date
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:ActualDeliverySupplyChainEvent/ram:OccurrenceDateTime/udt:DateTimeString/@format
+  fixe: '102'
+- id: BT-134-1
+  cle: BT_134_1
+  libelle: Format date
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:BillingSpecifiedPeriod/ram:StartDateTime/udt:DateTimeString/@format
+  fixe: '102'
+- id: BT-135-1
+  cle: BT_135_1
+  libelle: Format date
+  bloc: Lignes de facture
+  role: lignes
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:BillingSpecifiedPeriod/ram:EndDateTime/udt:DateTimeString/@format
+  fixe: '102'
+- id: Réf. commande ligne
+  cle: REF_COMMANDE_LIGNE
+  libelle: Numéro de commande à la ligne
+  bloc: Spécifique
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:BuyerOrderReferencedDocument/ram:IssuerAssignedID
+- id: Réf. livraison ligne
+  cle: REF_LIVRAISON_LIGNE
+  libelle: Numéro de bon de livraison à la ligne
+  bloc: Spécifique
+  role: lignes
+  type: texte
+  profil: EXTENDED
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeDelivery/ram:DeliveryNoteReferencedDocument/ram:IssuerAssignedID
+- id: BT-32
+  cle: BT_32
+  libelle: Identifiant fiscal du vendeur
+  bloc: Vendeur
+  role: entete
+  type: texte
+  profil: EN16931
+  xpath:
+  - /rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID[@schemeID='FC']

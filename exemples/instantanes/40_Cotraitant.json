@@ -1,0 +1,86 @@
+{
+ "charges": [],
+ "entete": {
+  "BT_1": "F202600400",
+  "BT_106": 31000.0,
+  "BT_109": 31000.0,
+  "BT_11": "MARCHE-RESIDENCE-LES-PINS",
+  "BT_110": 6200.0,
+  "BT_112": 37200.0,
+  "BT_113": 0.0,
+  "BT_115": 37200.0,
+  "BT_2": "2026-03-16",
+  "BT_20": "Paiement à 30 jours date de facture",
+  "BT_23": "S6",
+  "BT_24": "urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended",
+  "BT_27": "BATI SUD SARL",
+  "BT_3": "380",
+  "BT_30": "700000003",
+  "BT_31": "FR73700000003",
+  "BT_33": "SARL au capital de 15 000 EUR",
+  "BT_34": "700000003",
+  "BT_35": "3 chemin des Carrières",
+  "BT_37": "MERIGNAC",
+  "BT_38": "33700",
+  "BT_40": "FR",
+  "BT_44": "SCI LES PINS",
+  "BT_47": "150000008",
+  "BT_48": "FR61150000008",
+  "BT_49": "150000008",
+  "BT_5": "EUR",
+  "BT_50": "2 allée des Pins",
+  "BT_52": "PESSAC",
+  "BT_53": "33600",
+  "BT_55": "FR",
+  "BT_72": "2026-03-12",
+  "BT_81": "30",
+  "BT_82": "Virement",
+  "BT_84": "FR7699999000010001234567809",
+  "BT_86": "XBQAFRP0XXX",
+  "BT_9": "2026-04-15",
+  "EXT_FR_FE_BG_03": "SOGEBAT SA"
+ },
+ "lignes": [
+  {
+   "BT_126": "1",
+   "BT_129": 1.0,
+   "BT_130": "C62",
+   "BT_131": 31000.0,
+   "BT_146": 31000.0,
+   "BT_151": "S",
+   "BT_152": 20.0,
+   "BT_153": "Lot menuiseries extérieures - part du cotraitant"
+  }
+ ],
+ "notes": [
+  {
+   "BT_21": "PMD",
+   "BT_22": "En cas de retard de paiement, une pénalité égale à trois fois le taux d'intérêt légal est exigible."
+  },
+  {
+   "BT_21": "PMT",
+   "BT_22": "Indemnité forfaitaire pour frais de recouvrement en cas de retard de paiement : 40 €."
+  },
+  {
+   "BT_21": "AAB",
+   "BT_22": "Pas d'escompte pour paiement anticipé."
+  },
+  {
+   "BT_21": "BAR",
+   "BT_22": "B2B"
+  },
+  {
+   "BT_21": "AAI",
+   "BT_22": "Cotraitant du groupement conjoint SOGEBAT / BATI SUD ; mandataire : SOGEBAT SA."
+  }
+ ],
+ "remises": [],
+ "tva": [
+  {
+   "BT_116": 31000.0,
+   "BT_117": 6200.0,
+   "BT_118": "S",
+   "BT_119": 20.0
+  }
+ ]
+}
