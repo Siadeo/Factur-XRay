@@ -1,4 +1,4 @@
-# Factur-Xray (EzFacture)
+# Factur-Xray
 
 Application Windows qui permet de générer des factures de test à partir de 50 factures d'exemple
 de la réforme française (Flux 2). Chaque exemple est un onglet Excel : on peut l'explorer aux **Rayons X** (le BT

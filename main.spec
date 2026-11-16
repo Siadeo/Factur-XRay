@@ -28,13 +28,13 @@ def _make_version_info(version_str):
   kids=[
     StringFileInfo([
       StringTable(u'040904B0', [
-        StringStruct(u'CompanyName',      u'EzFacture'),
+        StringStruct(u'CompanyName',      u'Factur-Xray'),
         StringStruct(u'FileDescription',  u'Factur-Xray - Factures d’exemple expliquées'),
         StringStruct(u'FileVersion',      u'{vdot}'),
-        StringStruct(u'InternalName',     u'ezfacture'),
+        StringStruct(u'InternalName',     u'factur-xray'),
         StringStruct(u'LegalCopyright',   u'Copyright (c) 2026 Siadeo'),
-        StringStruct(u'OriginalFilename', u'ezfacture-{version_str}.exe'),
-        StringStruct(u'ProductName',      u'EzFacture'),
+        StringStruct(u'OriginalFilename', u'factur-xray-{version_str}.exe'),
+        StringStruct(u'ProductName',      u'Factur-Xray'),
         StringStruct(u'ProductVersion',   u'{vdot}'),
       ])
     ]),
@@ -79,7 +79,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name=f'ezfacture-{__version__}',
+    name=f'factur-xray-{__version__}',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

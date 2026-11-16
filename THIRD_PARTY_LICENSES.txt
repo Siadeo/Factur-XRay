@@ -1,4 +1,4 @@
-Licences des composants tiers inclus dans l'exécutable EzFacture (Factur-Xray)
+Licences des composants tiers inclus dans l'exécutable Factur-Xray
 
 Ce fichier est généré à partir du contenu de l'exécutable. Les textes sont
 reproduits tels que fournis par chaque composant.

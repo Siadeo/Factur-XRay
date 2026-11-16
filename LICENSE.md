@@ -43,4 +43,4 @@ Les libellés des données affichés par l'application ne reprennent pas la vers
 
 pikepdf (MPL-2.0) et python-stdnum (LGPL) sont inclus dans l'exécutable sans modification. Leur code source est disponible aux adresses indiquées ci-dessus.
 
-Le code source d'EzFacture étant public, vous pouvez recompiler l'exécutable avec une version modifiée de ces composants en suivant les instructions de compilation du [readme](readme.md).
+Le code source de Factur-Xray étant public, vous pouvez recompiler l'exécutable avec une version modifiée de ces composants en suivant les instructions de compilation du [readme](readme.md).

@@ -12,7 +12,7 @@ from generation.reader import lire
 from tools.utils import close_all_protected_sheets, disable_win_auto_printer_manage, use_pdf_printer
 
 logger = logging.getLogger(__name__)
-AIDE = "https://www.ezfacture.fr/documentation"
+AIDE = "https://github.com/Siadeo/Factur-XRay#readme"
 
 
 class Controller:

@@ -1,5 +1,5 @@
 """
-Script de build et packaging de Factur-Xray (ezfacture).
+Script de build et packaging de Factur-Xray.
 Usage : python build.py
 """
 import subprocess
